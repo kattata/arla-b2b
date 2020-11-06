@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>ARLA B2B</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Get started with HTML, CSS and JavaScript">
+    <meta name="author" content="Rasmus Cederdorff">
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/colors.css">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/survey.css">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" />
+</head>
+
+<body onhashchange="pageChange()">
+
+    <!-- pages -->
+    <!-- home page -->
+    <div class="topnav">
+        <a href="index.html"><img src="img/arlalogo.png" alt="Arla Logo"></a>
+        <i class="fas fa-bars"></i>
+        <div class="curtain">
+            <i class="fas fa-times"></i>
+            <div class="account-details">
+                <div class="profile-picture"></div>
+                <h3>Jørgen Øe</h3>
+                <form>
+                    <h4>Farm</h4>
+                    <select id="farm">
+                        <option value="farm">12345</option>
+                        <option value="farm">12346</option>
+                    </select>
+                </form>
+            </div>
+            <ul>
+                <a href="#home">
+                    <li>
+                        <i class="fas fa-home"></i>
+                        <p>Dashboard</p>
+                    </li>
+                </a>
+                <a href="#survey">
+                    <li>
+                        <i class="fas fa-pen"></i>
+                        <p>Survey</p>
+                    </li>
+                </a>
+                <a href="#progress">
+                    <li>
+                        <i class="fas fa-tasks"></i>
+                        <p>My progress</p>
+                    </li>
+                </a>
+                <a href="#leaderboard">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Leaderboard</p>
+                    </li>
+                </a>
+                <a href="#weather">
+                    <li>
+
+                        <i class="fas fa-sun"></i>
+                        <p>Weather</p>
+
+                    </li>
+                </a>
+                <a href="#settings">
+                    <li>
+                        <i class="fas fa-cogs"></i>
+                        <p>Settings</p>
+                    </li>
+                </a>
+            </ul>
+        </div>
+    </div>
+    <section id="home" class="page">
+        <nav>
+            <ul>
+
+                <li>
+                    <i class="fas fa-home"></i>
+                    <p>Dashboard</p>
+                </li>
+
+
+                <li>
+                    <i class="fas fa-pen"></i>
+                    <p>Survey</p>
+                </li>
+
+
+                <li>
+                    <i class="fas fa-tasks"></i>
+                    <p>My progress</p>
+                </li>
+
+
+                <li>
+
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Leaderboard</p>
+
+                </li>
+
+
+                <li>
+
+                    <i class="fas fa-sun"></i>
+                    <p>Weather</p>
+
+                </li>
+
+
+                <li>
+                    <i class="fas fa-cogs"></i>
+                    <p>Settings</p>
+                </li>
+
+            </ul>
+        </nav>
+        <div class="dashboard">
+            <div class="survey">SURVEY</div>
+            <div class="calculator">CALCULATOR</div>
+            <div class="news">NEWS</div>
+            <div class="progress">PROGRESS</div>
+            <div class="lb">LEADERBOARD</div>
+        </div>
+
+        <!-- my progress page -->
+        <section id="progress" class="page">
+
+            <p>Hmm, there should be some charts right here...</p>
+        </section>
+        <!-- leaderboard page -->
+        <section id="leaderboard" class="page">
+
+            <p>Hmm, there should be some statistics right here...</p>
+            <p>Hello</p>
+        </section>
+        <!-- weather page -->
+        <section id="weather" class="page">
+
+            <p>Hmm, there should be some forecast right here...</p>
+        </section>
+        <!-- settings page -->
+        <section id="settings" class="page">
+
+            <p>Hmm, there should be some settings right here...</p>
+        </section>
+
+    </section>
+
+    <!-- survey page -->
+    <section id="survey" class="page">
+        <div class="intro">
+            <span class="close">
+                <i class="fas fa-angle-left"></i>
+                <p>Go back</p>
+            </span>
+            <img src="img/arlalogo.png" alt="arla logo">
+            <h2>Welcome back!</h2>
+            <p>We take care of your cows and take great pride in having high standards on the farms. Remember to input
+                your data four times per year to document the great things being done. It helps us increase trust and
+                transparency - all the way from cow to consumer.
+            </p>
+            <p>
+                The information is taken from the last quarter survey. Please, check the data and update it if anything
+                has changed.
+            </p>
+            <button>START THE SURVEY</button>
+        </div>
+        <div class="form">
+            <img src="img/arlalogo.png" alt="arla logo">
+        </div>
+
+    </section>
+
+    <!-- contact page -->
+    <section id="profile" class="page">
+
+        <a class="right" href="#" onclick="logout()">Logout</a>
+        <div id="user-data"></div>
+    </section>
+
+    <!-- login page -->
+    <section id="login" class="page">
+        <div class="logocontainer">
+            <img id="loginlogo" src="./img/arlalogo.png" alt="">
+        </div>
+        <!-- firebase auth container  -->
+        <section id="firebaseui-auth-container"></section>
+    </section>
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+    <!-- spa js file -->
+    <script src="./js/spa.js"></script>
+    <!-- main js file -->
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

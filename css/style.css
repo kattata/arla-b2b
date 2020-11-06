@@ -1,0 +1,417 @@
+@font-face {
+    src: url(../fonts/arla_fonts/ArlaInterFace-Regular.ttf);
+    font-family: Arla inertface;
+}
+
+body {
+    font-family: Arla inertface;
+}
+
+/* ---------- top nav ---------- */
+
+.topnav {
+    background-color: #fff;
+    height: 10%;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.topnav a {
+    display: flex;
+    align-items: center;
+    width: 60px;
+    margin-left: 20px;
+}
+
+.topnav a img {
+    width: 100%;
+}
+
+.topnav>i {
+    font-size: 7vw;
+    margin-right: 20px;
+}
+
+.topnav .curtain {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 100%;
+    z-index: 10;
+    background-color: var(--green1);
+    transition: left .4s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.curtain.active {
+    left: 0;
+}
+
+/* font-family: (--font-family); */
+.curtain .fa-times {
+    align-self: flex-end;
+    margin-top: 20px;
+    margin-right: 20px;
+    font-size: 8vw;
+    color: #fff;
+}
+
+.account-details {
+    margin-top: 5vh;
+    width: 50vw;
+    height: 60vw;
+    font-family: var(--font-family);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.account-details .profile-picture {
+    width: 40vw;
+    height: 40vw;
+    border: 3px solid white;
+    border-radius: 50%;
+    background-image: url(/img/profile_picture.jpg);
+    background-position: center center;
+    background-size: cover;
+}
+
+.account-details h3 {
+    color: #fff;
+    margin: 0;
+    margin-top: 10px;
+    font-size: 8vw;
+}
+
+.account-details h4 {
+    color: #fff;
+    margin: 0;
+
+}
+
+.account-details form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    font-size: 5vw;
+    font-weight: 300;
+}
+
+.account-details form select {
+    margin-left: 10px;
+    color: #fff;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-family: var(--font-family);
+    box-shadow: transparent;
+}
+
+.account-details form select option {
+    background-color: var(--green1);
+    box-shadow: none;
+}
+
+.curtain ul {
+    width: 60%;
+    list-style: none;
+    color: #fff;
+    margin-top: 6vh;
+    padding: 0;
+}
+
+.curtain ul a {
+    text-decoration: none;
+    color: white;
+}
+
+.curtain ul li {
+    display: flex;
+    margin: 20px 0;
+}
+
+.curtain ul li i {
+    margin: 0;
+    width: 6.5vw;
+    font-size: 6.5vw;
+}
+
+.curtain ul li p {
+    margin: 0;
+    font-size: 6.5vw;
+    margin-left: 30px;
+    width: 40vw;
+}
+
+.page>nav {
+    display: none;
+}
+
+@media only screen and (min-width: 600px) {
+    .topnav {
+        height: 7vh;
+    }
+
+    .topnav>i {
+        display: none;
+    }
+
+    .curtain {
+        display: none;
+    }
+
+    .page>nav {
+        display: block;
+        width: 18%;
+        background-color: #fff;
+        height: 95%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        border-bottom-right-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+
+    .page>nav a {
+        text-decoration: none;
+        color: var(--green1);
+    }
+
+    .page>nav ul {
+        width: 100%;
+        list-style: none;
+        color: var(--green1);
+        margin: 0;
+        padding-left: 0;
+
+    }
+
+    .page>nav ul li {
+        display: flex;
+        height: 60px;
+        cursor: pointer;
+        align-items: center;
+
+    }
+
+    .page>nav ul li.active {
+        background-color: white;
+    }
+
+    .page>nav ul li.active i {
+        color: var(--green1);
+    }
+
+    .page>nav ul li.active p {
+        color: var(--green1);
+    }
+
+    .page>nav ul li i {
+        margin: 0;
+        width: 2vw;
+        font-size: 2vw;
+        margin-left: 30px;
+    }
+
+    .page>nav ul li p {
+        margin: 0;
+        font-size: 2vw;
+        margin-left: 30px;
+    }
+}
+
+/* ---------- login page logo ---------- */
+
+.logocontainer {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+.logocontainer img {
+    width: 200px;
+    margin-bottom: 400px;
+}
+
+
+/* ---------- page styling ---------- */
+.page {
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    animation: fadeIn 0.4s;
+    background-color: var(--green1);
+}
+
+#home {
+    background-color: var(--green1);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#home .page {
+    width: 80%;
+    height: 95%;
+    background-color: #fff;
+    border-bottom-left-radius: 8px;
+    border-top-left-radius: 8px;
+
+}
+
+#survey {
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.hide {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 0.4s, opacity 0.4s linear;
+}
+
+/* ---------- authentication styling ---------- */
+#firebaseui-auth-container {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.firebaseui-container {
+    font-family: var(--font-family);
+    font: 16px var(--font-family);
+}
+
+.firebaseui-title {
+    text-align: center;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.mdl-button--raised.mdl-button--colored,
+.mdl-button--raised.mdl-button--colored:active,
+.mdl-button--raised.mdl-button--colored:hover {
+    background: var(--green1);
+    color: #fff;
+    border-radius: 0;
+}
+
+.firebaseui-textfield.mdl-textfield .firebaseui-label::after {
+    background-color: var(--green1);
+}
+
+.profile-img {
+    width: 100%;
+}
+
+/* ---------- dashboard ---------- */
+
+.dashboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    background-color: #fff;
+    width: 80%;
+    height: 95%;
+    border-bottom-left-radius: 8px;
+    border-top-left-radius: 8px;
+}
+
+/* ---------- dashboard items ---------- */
+.dashboard :nth-child(1),
+.dashboard :nth-child(2),
+.dashboard :nth-child(3),
+.dashboard :nth-child(4),
+.dashboard :nth-child(5) {
+    border-radius: 8px;
+    box-shadow: 0 0.1px 0.5px rgba(0, 0, 0, 0.011),
+        0 0.3px 1.2px rgba(0, 0, 0, 0.016),
+        0 0.5px 2.3px rgba(0, 0, 0, 0.02),
+        0 0.9px 4px rgba(0, 0, 0, 0.024),
+        0 1.7px 7.5px rgba(0, 0, 0, 0.029),
+        0 4px 18px rgba(0, 0, 0, 0.04);
+    background-color: #fff;
+    margin: 8px;
+}
+
+.survey {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.calculator {
+    grid-row: 1;
+    grid-column: 2;
+}
+
+.news {
+    grid-row: 1;
+    grid-column: 3;
+}
+
+.progress {
+    grid-row: 2;
+    grid-column: 1 / span 2;
+}
+
+.lb {
+    grid-row: 2;
+    grid-column: 3;
+}
+
+/* ---------- mobile and tablet ---------- */
+
+@media only screen and (max-width: 1024px) {
+    .dashboard {
+        position: absolute;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(20, 100px);
+        width: 90vw;
+        height: 100%;
+        right: 20px;
+    }
+
+    .survey {
+        grid-row: 1 / span 3;
+        grid-column: 1;
+    }
+
+    .news {
+        grid-row: 4 / span 3;
+        grid-column: 1;
+    }
+
+    .lb {
+        grid-row: 7 / span 3;
+        grid-column: 1;
+    }
+
+    .progress {
+        grid-row: 10 / span 3;
+        grid-column: 1;
+    }
+
+    .calculator {
+        grid-row: 13 / span 2;
+        grid-column: 1;
+    }
+}
