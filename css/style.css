@@ -171,13 +171,14 @@ body {
 
     .page>nav {
         display: block;
-        width: 18%;
+        width: 17%;
+        min-width: 250px;
         background-color: #fff;
         height: 95%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-evenly;
+        justify-content: flex-end;
         border-bottom-right-radius: 8px;
         border-top-right-radius: 8px;
     }
@@ -191,6 +192,7 @@ body {
         list-style: none;
         margin: 0;
         padding-left: 0;
+        padding-bottom: 30px;
         color: var(--gray3);
     }
 
@@ -199,32 +201,34 @@ body {
         height: 60px;
         cursor: pointer;
         align-items: center;
-
-    }
-
-    .page>nav ul li.active {
-        background-color: white;
-    }
-
-    .page>nav ul li.active i {
-        color: var(--green1);
-    }
-
-    .page>nav ul li.active p {
-        color: var(--green1);
-    }
-
-    .page>nav ul li img {
-        margin: 0;
-        width: 2vw;
-        margin-left: 30px;
+        transition: all 0.3s ease;
     }
 
     .page>nav ul li p {
         margin: 0;
-        font-size: 2vw;
+        font-size: 1.3rem;
+        margin-left: 30px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+
+    }
+    
+    .page>nav ul li img {
+        margin: 0;
+        width: 1.5rem;
         margin-left: 30px;
     }
+
+    .page>nav ul li.active {
+        background-color: var(--gray4);
+    }
+
+    .page>nav ul li.active p {
+        color: var(--gray1);
+    }
+
+    
+
 }
 
 /* ---------- login page logo ---------- */
@@ -247,7 +251,7 @@ body {
 /* ---------- page styling ---------- */
 .page {
     display: none;
-    height: 100vh;
+    height: 93vh;
     width: 100vw;
     animation: fadeIn 0.4s;
     background-color: var(--green1);
@@ -263,7 +267,7 @@ body {
 }
 
 #home .page {
-    width: 80%;
+    width: 82%;
     height: 95%;
     background-color: #fff;
     border-bottom-left-radius: 8px;
@@ -328,7 +332,7 @@ body {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     background-color: #fff;
-    width: 80%;
+    width: 82%;
     height: 95%;
     border-bottom-left-radius: 8px;
     border-top-left-radius: 8px;

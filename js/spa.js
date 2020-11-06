@@ -64,7 +64,7 @@ function hideTabs() {
     }
 }
 
-for (let i = 2; i < 6; i++) {
+for (let i = 2; i < 4; i++) {
     navigation[i].addEventListener("click", () => {
         hidePages();
         hideTabs();
