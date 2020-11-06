@@ -1,10 +1,10 @@
 @font-face {
     src: url(../fonts/arla_fonts/ArlaInterFace-Regular.ttf);
-    font-family: Arla inertface;
+    font-family: Arla interface;
 }
 
 body {
-    font-family: Arla inertface;
+    font-family: Arla interface;
     background-color: var(--green1);
     color: var(--gray1);
 }
@@ -28,13 +28,12 @@ body {
     margin-left: 20px;
 }
 
-.topnav a img {
+.profile-img {
     width: 100%;
 }
 
-.topnav>i {
-    font-size: 7vw;
-    margin-right: 20px;
+.topnav a img {
+    width: 100%;
 }
 
 .topnav .curtain {
@@ -206,8 +205,8 @@ body {
 
     .page>nav ul li p {
         margin: 0;
-        font-size: 1.3rem;
-        margin-left: 30px;
+        font-size: 1.2rem;
+        margin-left: 1.5rem;
         font-weight: 600;
         transition: all 0.3s ease;
 
@@ -226,9 +225,6 @@ body {
     .page>nav ul li.active p {
         color: var(--gray1);
     }
-
-    
-
 }
 
 /* ---------- login page logo ---------- */
@@ -329,7 +325,7 @@ body {
 
 .dashboard {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(7, 1fr);
     grid-template-rows: 1fr 1fr;
     background-color: #fff;
     width: 82%;
@@ -339,11 +335,7 @@ body {
 }
 
 /* ---------- dashboard items ---------- */
-.dashboard :nth-child(1),
-.dashboard :nth-child(2),
-.dashboard :nth-child(3),
-.dashboard :nth-child(4),
-.dashboard :nth-child(5) {
+.dashboard-item {
     border-radius: 8px;
     box-shadow: 0 0.1px 0.5px rgba(0, 0, 0, 0.011),
         0 0.3px 1.2px rgba(0, 0, 0, 0.016),
@@ -352,32 +344,141 @@ body {
         0 1.7px 7.5px rgba(0, 0, 0, 0.029),
         0 4px 18px rgba(0, 0, 0, 0.04);
     background-color: #fff;
-    margin: 8px;
+    margin: 15px 0 0 15px;
 }
+
+.dashboard h2 {
+    font-size: 1.2rem;
+    margin-left: 1.2rem;
+    position: relative;
+}
+
+.dashboard h2::after {
+    content: "";
+    height: 1px;
+    width: calc(100% + 1.2rem);
+    position: absolute;
+    background-color: var(--gray5);
+    left: -1.2rem;
+    bottom: -1rem;
+}
+
+/* SURVEY */
 
 .survey {
     grid-row: 1;
-    grid-column: 1;
+    grid-column: 1 / 3;
 }
+
+/* CALCULATOR */
 
 .calculator {
     grid-row: 1;
-    grid-column: 2;
+    grid-column: 3/5;
+}
+
+.calculator-container {
+    display: flex;
+    margin: 1.2rem;
+    padding-top: 1rem;
+}
+
+.calculator-cows-container, .calculator-milk-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.calculator-cows-container {
+    margin-right: 15px;
+}
+
+#calculator-cows, #calculator-milk {
+    border: none;
+    border: 1px solid var(--gray5);
+    border-radius: 8px;
+    height: 30px;
+}
+
+
+.calculator-label {
+    /* padding-left: 5px; */
+    padding-bottom: 5px;
+}
+
+.calculator-range-container {
+    padding-bottom: 40px;
+    position: relative;
+}
+
+#calculator-range {
+    width: 88%;
+    margin: 10px auto 5px;
+    display: block;
+}
+
+input[type=range]::-webkit-slider-runnable-thumb {
+    background-color: var(--green1);
+}
+
+.calculator-range-label {
+    padding-left: 1.2rem;
+    
+}
+
+.calculator-range-output {
+    padding: 5px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    position: absolute;
+    border: 1px solid var(--gray5);
+    left: 10%;
+    /* transform: translateX(-50%); */
+    z-index: 10;
+    background-color: white;
+}
+
+
+.result-container {
+    padding: 0 1.2rem 1.2rem 1.2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.result-number-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--green1);
+    height: 50px;
+    width: 100%;
+    margin-left: 1.2rem;
+    border-radius: 8px;
+}
+
+.result-number {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
 }
 
 .news {
     grid-row: 1;
-    grid-column: 3;
+    grid-column: 5/8;
+    margin: 15px 30px 0 15px;
+
 }
 
 .progress {
     grid-row: 2;
-    grid-column: 1 / span 2;
+    grid-column: 1 / 5;
+    margin: 15px 0 15px 15px;
 }
 
 .lb {
     grid-row: 2;
-    grid-column: 3;
+    grid-column: 5 /-1;
+    margin: 15px 30px 15px 15px;
 }
 
 /* ---------- mobile and tablet ---------- */

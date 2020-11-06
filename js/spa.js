@@ -95,3 +95,9 @@ surveyClose.addEventListener("click", () => {
 introClose.addEventListener("click", () => {
     surveyIntro.style.display = 'none';
 })
+
+// makes 'dashboard' in the nav active when you first log in
+function makeHomeActive() {
+    navigation[0].classList.add("active");
+}
+makeHomeActive();

@@ -90,3 +90,50 @@ burger.addEventListener('click', () => {
 close.addEventListener('click', () => {
     curtain.classList.toggle("active");
 })
+
+
+// Calculator - range input
+let rangeInput = document.querySelector('#calculator-range');
+let rangeOutput = document.querySelector('.calculator-range-output');
+
+
+rangeInput.addEventListener("input", () => {
+    setRangeOutput(rangeInput, rangeOutput);
+    turnInputToNumbers();
+});
+
+function setRangeOutput(input, output) {
+    const val = input.value;
+    const min = input.min ? input.min : 0;
+    const max = input.max ? input.max : 100;
+    const newVal = Number(((val - min) * 100) / (max - min));
+    output.innerHTML = val;
+
+    output.style.left = `calc(${newVal}% + (${25 - newVal * 0.55}px))`;
+}
+
+//Calculator - functionality
+
+function turnInputToNumbers() {
+    let cowsValue = document.querySelector('#calculator-cows').value;
+    let milkValue = document.querySelector('#calculator-milk').value;
+    let rangeValue = rangeInput.value;
+
+    let cowsNumber = Number(cowsValue);
+    let milkNumber = Number(milkValue);
+    let rangeNumber = Number(rangeValue);
+
+    calculate(cowsNumber, milkNumber, rangeNumber);
+
+}
+
+function calculate(a, b, c) {
+    displayCalculation(Math.round(a * b * c * 0.01));
+}
+
+function displayCalculation(result) {
+    document.querySelector('.result-number').innerHTML = `${result}€`;
+}
+
+
+console.log(turnInputToNumbers());
