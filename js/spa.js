@@ -83,7 +83,7 @@ navigation[0].addEventListener("click", () => {
     hidePages()
     hideTabs();
     navigation[0].classList.add("active")
-    dashboard.style.display = 'grid';
+    dashboard.style.display = 'flex';
 })
 
 const surveyClose = document.querySelector("#survey span.close");
