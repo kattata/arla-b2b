@@ -163,7 +163,7 @@ const  nextBtn  =  document.querySelector(".button-container button:nth-of-type(
 const  bullets  =  document.querySelectorAll(".progress-container .steps");
 const  questions  =  document.querySelectorAll(".questions .category");
 
-//survey done variables
+//survey done letiables
 const surveyDone = document.querySelector("#survey .great-success");
 const surveyDoneBtn = document.querySelector(".great-success button");
 const surveyForm = document.querySelector("#survey .form");
@@ -264,3 +264,16 @@ surveyFinishLaterBtn.addEventListener('click', ()=>{
     survey.classList.remove('active');
     surveyFinishLater.style.display = "none";
 })
+
+let now = new Date();
+let start = new Date(now.getFullYear(), 0, 0);
+let diff = (now - start) + ((start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000);
+let oneDay = 1000 * 60 * 60 * 24;
+let day = Math.floor(diff / oneDay);
+console.log('Day of year: ' + day);
+let surveyDeadline   = 366 - day;
+console.log('Days left: ' + surveyDeadline);
+
+const surveyDashboardDays = document.querySelector(".text-wrapper-survey p:nth-of-type(2)");
+
+surveyDashboardDays.innerHTML = `${surveyDeadline} DAYS LEFT`
