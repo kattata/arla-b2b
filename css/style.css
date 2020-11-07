@@ -573,7 +573,7 @@ hr {
 
 /*-------Main dropdown---------*/
 .dropbtn {
-    background-color: #fff;
+    background-color: #ffffff00;
     color: var(--gray6);
     padding: 16px;
     font-size: 16px;
@@ -596,9 +596,9 @@ hr {
     background-color: #fff;
     width: 248px;
     overflow: auto;
-    box-shadow: 3px 3px 6px 0px rgba(0,0,0,0.2);
+    box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.04);
     z-index: 1;
-    align-items: center;    
+    align-items: center;
   }
 
   .dropdown-content a {
@@ -606,10 +606,18 @@ hr {
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    font-size: 1em;
   }
 
   .show {
     display: block;
+}
+
+.fa-sort-down {
+    font-size: .8em;
+    padding: 0;
+    display: flex;
+    float: right;
 }
 
 /* ---------- mobile and tablet ---------- */
