@@ -490,6 +490,11 @@ input[type=range]::-webkit-slider-runnable-thumb {
     line-height: 1.6;
 }
 
+.leaderboard-carbonProduction-dashboard {
+    line-height: 2;
+    margin-top: 32px;
+}
+
 .leaderboard-title-paragraph {
     font-size: .8em;
     color: var(--gray2);
@@ -551,7 +556,7 @@ h1 {
 }
 
 hr {
-    border: 1px solid var(--gray2);
+    border: 1px solid var(--gray5);
     width: auto;
 }
 
