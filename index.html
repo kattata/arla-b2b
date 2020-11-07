@@ -103,6 +103,17 @@
         <div class="dashboard">
             <div class="survey dashboard-item">
                 <h2>Survey</h2>
+                <div class="survey-container">
+                    <div class="text-wrapper-survey">
+                        <p>Casper, you have</p>
+                        <p>4 DAYS LEFT</p>
+                        <p>to finish the survey</p>
+                    </div>
+                    <div class="survey-progressbar">
+                        <div class="fill"></div>
+                        <p>Continue (33%)</p>
+                    </div>
+                </div>
             </div>
             <div class="calculator dashboard-item">
                 <h2>Calculator</h2>
@@ -233,12 +244,12 @@
         <div class="form">
             <img src="img/arlalogo.png" alt="arla logo">
             <div class="progress-container">
-                <div class="steps ">1</div>
+                <div class="steps completed">1</div>
                 <div class="steps">2</div>
                 <div class="steps">3</div>
             </div>
             <div class="questions">
-                <div class="category">
+                <div class="category completed">
                     <h2>COWS</h2>
                     <label for="cows">Amount of cows</label>
                     <div>
@@ -279,12 +290,26 @@
                 </div>
             </div>
             <div class="button-container">
-                <button>BACK</button>
+                <button >BACK</button>
                 <button>NEXT</button>
             </div>
             <p>Finish the survey later</p>
         </div>
-
+        <div class="great-success">
+            <h2>Well done!</h2>
+            <h3>You have finished the survey.</h3>
+            <button>DONE</button>
+            <img src="img/cow_survey.png" alt="">
+        </div>
+        <div class="finish-later">
+            <div class="rectangle">
+                <h2>Data has been saved.</h2>
+                <h3>You can finish the survey later.</h3>
+                <a href="#">
+                    Go back to dashboard
+                </a>
+            </div>
+        </div>
     </section>
 
     <!-- contact page -->

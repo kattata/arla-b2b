@@ -74,7 +74,7 @@ for (let i = 2; i < 4; i++) {
     })
 }
 navigation[1].addEventListener("click", () => {
-    survey.style.display = 'block';
+    survey.classList.add("active");
     hideTabs();
     navigation[0].classList.add("active");
 
@@ -90,7 +90,7 @@ const surveyClose = document.querySelector("#survey span.close");
 const surveyIntro = document.querySelector("#survey .intro");
 const introClose = document.querySelector("#survey .intro> button");
 surveyClose.addEventListener("click", () => {
-    survey.style.display = 'none';
+    survey.classList.remove('active')
 })
 introClose.addEventListener("click", () => {
     surveyIntro.style.display = 'none';
