@@ -3,7 +3,7 @@
 // ========== Firebase sign in functionality ========== //
 
 // Your web app's Firebase configuration
-var firebaseConfig = {
+const _firebaseConfig = {
     apiKey: "AIzaSyB_XZDIiicBhPGALFj4ikeZtqk34jQllXk",
     authDomain: "arlab2b.firebaseapp.com",
     databaseURL: "https://arlab2b.firebaseio.com",
@@ -13,7 +13,7 @@ var firebaseConfig = {
     appId: "1:786345968830:web:2327bf9f1d27dee8cf8aef"
 };
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(_firebaseConfig);
 const _db = firebase.firestore();
 let _firebaseUI;
 
