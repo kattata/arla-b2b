@@ -488,7 +488,7 @@ input[type=range]::-webkit-slider-runnable-thumb {
     line-height: 1.6;
 }
 
-.leaderboard-carbonProduction p {
+.leaderboard-title-paragraph {
     font-size: .8em;
     color: var(--gray2);
 }
@@ -507,6 +507,17 @@ input[type=range]::-webkit-slider-runnable-thumb {
     list-style-type: none;
     display: inline-block;
     margin-left: 24px;
+}
+
+.leaderboard-regions-container> ul {
+    font-weight: 600;
+}
+
+.leaderboard-description-paragraph {
+    color: #a9a9a9;
+    font-size: 1em;
+    margin: 0;
+    padding: 0 0 0 16px;
 }
 
 .leaderboard-carbon-container {
@@ -530,7 +541,7 @@ h4 {
     color: var(--gray6);
     font-size: 1.2em;
     margin: 0;
-    padding: 16px;
+    padding: 16px 0 0 16px;
 }
 
 h1 {
@@ -549,6 +560,7 @@ hr {
     margin: 32px 0 24px 16px;
     box-shadow: 3px 6px 28px 0px rgba(0,0,0,0.04);
     border-radius: 12px;
+    line-height: 1.6;
     /* display: block; */
 }
 
@@ -559,6 +571,7 @@ hr {
     margin: 0 16px 24px 0;
     box-shadow: 3px 6px 28px 0px rgba(0,0,0,0.04);
     border-radius: 12px;
+    line-height: 1.6;
     float: right;
     line-height: 1.6;
 }
@@ -570,6 +583,20 @@ hr {
     display: flex;
     justify-content: center;
 }
+
+.map-productivity-container {
+    width: 250px;
+    height: 150px;
+    background-color: #fff;
+    box-shadow: 3px 6px 28px 0px rgba(0,0,0,0.04);
+    border-radius: 12px;
+    right: 2%;
+    margin-top: 16px;
+    position: absolute;
+    /* display: none; */
+}
+
+
 
 /*-------Main dropdown---------*/
 .dropbtn {
