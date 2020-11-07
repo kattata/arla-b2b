@@ -136,6 +136,42 @@
             </div>
             <div class="lb dashboard-item">
                 <h2>Leaderboard</h2>
+
+                <diV class="leaderboard-carbonProduction-dashboard">
+                <div class="leaderboard-number-container">
+                    <p class="leaderboard-title-paragraph">Place</p>
+                        <ul>
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                        </ul>
+                </div>
+
+                <div class="leaderboard-regions-container">
+                    <p class="leaderboard-title-paragraph">Region</p>
+                        <ul>
+                            <li>Northern Denmark</li>
+                            <li>Southern Denmark</li>
+                            <li>Zeland</li>
+                            <li>Capital Denmark</li>
+                            <li>Central Jutland</li>
+                        </ul>
+                </div>
+
+                <div class="leaderboard-carbon-container">
+                    <p class="leaderboard-title-paragraph">CO2 production in 2019</p>
+                        <ul>
+                            <li>8702 t</li>
+                            <li>8959 t</li>
+                            <li>9001 t</li>
+                            <li>9235 t</li>
+                            <li>9387 t</li>  
+                        </ul>
+                    </div>
+                </diV>
+
             </div>
         </div>
 
@@ -146,13 +182,24 @@
         </section>
         <!-- leaderboard page -->
         <section id="leaderboard" class="page">
-                <h1>Denmark</h1>
+            <!-- Leaderboard main dropdown -->
+            <div style="width: 100%; text-align: center;">
+                <div class="dropdown">
+                    <button onclick="toggleDropdown()" class="dropbtn">Denmark</button>
+                    <div id="myDropdown" class="dropdown-content">
+                    <a href="#">Scandinavia</a>
+                    <a href="#">Europe</a>
+                    </div>
+                </div>
+            </div>
+
                 <div style="float: left;">
                     <diV class="leaderboard-carbonProduction">
                         <h4>Leaderboard</h4>
+                        <p class="leaderboard-description-paragraph">Here you can see how much C02 does each region produce</p>
                         <hr>
                         <div class="leaderboard-number-container">
-                            <p>Place</p>
+                            <p class="leaderboard-title-paragraph">Place</p>
                                 <ul>
                                     <li>1</li>
                                     <li>2</li>
@@ -162,7 +209,7 @@
                                 </ul>
                         </div>
                         <div class="leaderboard-regions-container">
-                            <p>Region</p>
+                            <p class="leaderboard-title-paragraph">Region</p>
                                 <ul>
                                     <li>Northern Denmark</li>
                                     <li>Southern Denmark</li>
@@ -172,7 +219,7 @@
                                 </ul>
                         </div>
                         <div class="leaderboard-carbon-container">
-                            <p>CO2 production</p>
+                            <p class="leaderboard-title-paragraph">CO2 production in 2019</p>
                                 <ul>
                                     <li>8702 t</li>
                                     <li>8959 t</li>
@@ -184,14 +231,18 @@
                         </diV>
                         <div class="leaderboard-comparison">
                             <h4>Compare</h4>
+                            <p class="leaderboard-description-paragraph">Here you can compare your CO2 production with others</p>
                             <hr>
                         </div>
                     </div>
                     <div class="leaderboard-map" id="leaderboard-map-container">
                         <h4>Map</h4>
+                        <p class="leaderboard-description-paragraph">Here you can see which region is the best in sustainability</p>
                         <hr>
+                        <div class="map-productivity-container"></div>
                         <img src="./img/country.svg" alt="DK map" class="denamrk-map">
                     </div>
+
         </section>
 
     </section>

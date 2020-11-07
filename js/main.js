@@ -3,7 +3,7 @@
 // ========== Firebase sign in functionality ========== //
 
 // Your web app's Firebase configuration
-var firebaseConfig = {
+const _firebaseConfig = {
     apiKey: "AIzaSyB_XZDIiicBhPGALFj4ikeZtqk34jQllXk",
     authDomain: "arlab2b.firebaseapp.com",
     databaseURL: "https://arlab2b.firebaseio.com",
@@ -13,7 +13,7 @@ var firebaseConfig = {
     appId: "1:786345968830:web:2327bf9f1d27dee8cf8aef"
 };
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(_firebaseConfig);
 const _db = firebase.firestore();
 let _firebaseUI;
 
@@ -137,3 +137,22 @@ function displayCalculation(result) {
 
 
 console.log(turnInputToNumbers());
+
+// Leaderboar Dropdown
+
+function toggleDropdown() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+  
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      let dropdowns = document.getElementsByClassName("dropdown-content");
+      let i;
+      for (i = 0; i < dropdowns.length; i++) {
+        let openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
