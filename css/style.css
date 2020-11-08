@@ -729,6 +729,7 @@ hr {
     margin: 0 auto;
     display: flex;
     justify-content: center;
+    position: relative;
 }
 
 .map-productivity-container {
@@ -740,7 +741,22 @@ hr {
     right: 2%;
     margin-top: 16px;
     position: absolute;
-    /* display: none; */
+    display: none;
+}
+
+.click-me {
+    top: 35%;
+    right: 25%;
+    position: absolute;
+    z-index: 100;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+.click-me:hover + .map-productivity-container {
+    display: block;
+    
 }
 
 

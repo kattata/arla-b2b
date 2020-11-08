@@ -480,3 +480,8 @@ console.log('Days left: ' + surveyDeadline);
 const surveyDashboardDays = document.querySelector(".text-wrapper-survey p:nth-of-type(2)");
 
 surveyDashboardDays.innerHTML = `${surveyDeadline} DAYS LEFT`
+
+
+  
+  
+
