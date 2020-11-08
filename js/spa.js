@@ -103,7 +103,7 @@ function makeHomeActive() {
 makeHomeActive();
 
 
-//progress bar code
+//suvey code starts
 
 const previousBtn = document.querySelector(".button-container button:nth-of-type(1)");
 const nextBtn = document.querySelector(".button-container button:nth-of-type(2)");
@@ -181,9 +181,14 @@ previousBtn.addEventListener('click', () => {
     }
 });
 
+const progressBar = document.querySelector(".survey-progressbar .fill");
+const progressText = document.querySelector(".survey-progressbar p");
+
 surveyDoneBtn.addEventListener('click', () => {
     survey.classList.remove('active');
     surveyDone.style.display = "none";
+     progressBar.style.width = `${Math.round(currentStep * 100 / 3)}%`;
+    progressText.innerHTML = `Completed ${Math.round(currentStep * 100 / 3)}%`;
     currentStep = 1;
     questionIterator = 0;
     questions[0].classList.add('completed');
@@ -191,6 +196,7 @@ surveyDoneBtn.addEventListener('click', () => {
     questions[2].classList.remove('completed');
     bullets[1].classList.remove('completed');
     bullets[2].classList.remove('completed');
+    
 })
 navigation[1].addEventListener("click", () => {
     surveyForm.style.display = "flex";
@@ -207,9 +213,15 @@ surveyFinishLaterBtnForm.addEventListener('click', () => {
     surveyForm.style.display = "none"
 })
 
+//updating progress code
+
+
 surveyFinishLaterBtn.addEventListener('click', () => {
     survey.classList.remove('active');
     surveyFinishLater.style.display = "none";
+    progressBar.style.width = `${Math.round(currentStep * 100 / 3)}%`;
+    progressText.innerHTML = `Completed ${Math.round(currentStep * 100 / 3)}%`;
+
 })
 
 let now = new Date();
@@ -223,4 +235,6 @@ console.log('Days left: ' + surveyDeadline);
 
 const surveyDashboardDays = document.querySelector(".text-wrapper-survey p:nth-of-type(2)");
 
-surveyDashboardDays.innerHTML = `${surveyDeadline} DAYS LEFT`
+surveyDashboardDays.innerHTML = `${surveyDeadline} DAYS LEFT`;
+
+
