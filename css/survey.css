@@ -6,12 +6,19 @@
 #survey {
      font-family: Arla inertface;
      overflow: hidden;
-     display: block;
      position: fixed;
      top: 0;
-     left: 0;
+     /* change it to 100% */
+     left: 100%;
      width: 100%;
      height: 100vh;
+     background-color: #F9F9F9;
+     display: block;
+     transition: left .5s ease-in-out;
+}
+
+#survey.active {
+     left: 0;
 }
 
 #survey .intro {
@@ -20,6 +27,7 @@
      display: flex;
      flex-direction: column;
      background-color: #F9F9F9;
+     z-index: 5;
 }
 
 .intro span {
@@ -76,6 +84,8 @@
      display: flex;
      flex-direction: column;
      align-items: center;
+     background-color: #F9F9F9;
+     z-index: 4;
 }
 
 .form img {
@@ -117,7 +127,7 @@
      font-size: 16px;
      z-index: 2;
      background-color: rgb(255, 255, 255);
-     transition: all .3 ease;
+     transition: all .3s ease;
 }
 
 .progress-container .steps.completed {
@@ -152,11 +162,12 @@
      position: absolute;
      width: 100%;
      height: 100%;
+     opacity: 0;
+     transition: all .3s ease;
 }
 
-.questions .category:nth-of-type(2),
-.questions .category:nth-of-type(1) {
-     opacity: 0;
+.questions .category.completed {
+     opacity: 1;
 }
 
 .questions .category h2 {
@@ -213,12 +224,171 @@
      background-color: #fff;
      border: 1px solid black;
      outline: none;
+     transition: all .3s ease;
+}
+
+.button-container button:hover {
+     border: 0;
+     color: var(--green1);
 }
 
 .form p {
      font-weight: 500;
      text-decoration: underline;
      margin-top: 3vh;
+}
+
+.great-success {
+     width: 100%;
+     height: 100%;
+     position: absolute;
+     top: 0;
+     left: 0;
+     z-index: 1;
+     display: flex;
+     flex-direction: column;
+     font-family: Arla inertface;
+     display: none;
+     background-color: #F9F9F9;
+}
+
+.great-success h2 {
+     text-align: center;
+     margin: 0;
+     font-weight: 200;
+     margin: 1vh 0;
+     font-size: 40px;
+     margin-top: 35vh;
+}
+
+.great-success h3 {
+     text-align: center;
+     margin: 0;
+     font-weight: 200;
+     font-size: 20px;
+}
+
+.great-success button {
+     width: 100px;
+     padding: 8px 0;
+     color: white;
+     background-color: var(--green1);
+     border: 0;
+     outline: none;
+     align-self: center;
+     margin-top: 5vh;
+     cursor: pointer;
+}
+
+.great-success img {
+     margin-top: 7vh;
+     width: 70%;
+     object-fit: contain;
+     align-self: center;
+}
+
+.finish-later {
+     width: 100%;
+     height: 100%;
+     position: absolute;
+     top: 0;
+     left: 0;
+     z-index: 2;
+     display: flex;
+     flex-direction: column;
+     font-family: Arla inertface;
+     display: none;
+     background-color: #F9F9F9;
+     justify-content: center;
+     align-items: center;
+}
+
+.finish-later>div {
+     width: 70%;
+     height: 35%;
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
+     align-items: center;
+     font-family: Arla inertface;
+     background-color: #fff;
+     box-shadow: -1px 3px 7px 0px rgba(0, 0, 0, 0.1);
+}
+
+.finish-later h2 {
+     text-align: center;
+     margin: 0;
+     font-weight: 200;
+     margin: 2vh 0;
+     font-size: 28px;
+}
+
+.finish-later h3 {
+     text-align: center;
+     margin: 0;
+     font-weight: 200;
+     font-size: 18px;
+}
+
+.finish-later a {
+     margin-top: 7vh;
+     color: #000;
+}
+
+.survey-container {
+     width: 95%;
+     height: 77%;
+     margin: 10px;
+     font-family: Arla inertface;
+     padding: 0;
+}
+
+.text-wrapper-survey {
+     width: 100%;
+     font-family: Arla inertface;
+     margin: 35px 0;
+}
+
+.text-wrapper-survey p {
+     padding: 0;
+     margin: 0;
+     font-size: 18px;
+     font-weight: 300;
+     text-align: center;
+}
+
+.text-wrapper-survey p:nth-of-type(2) {
+     font-size: 36px;
+     margin: 10px 0;
+}
+
+.survey-progressbar {
+     width: calc(100% - 20px);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     margin: 0 10px;
+     border-radius: 8px;
+     height: 50px;
+     position: relative;
+     overflow: hidden;
+     border: 1px solid rgb(211, 211, 211);
+     box-shadow: -1px 2px 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+.survey-progressbar .fill {
+     position: absolute;
+     left: 0;
+     top: 0;
+     width: calc(100% / 3);
+     height: 100%;
+     background-color: var(--green1);
+     transition: all .3s ease;
+}
+
+.survey-progressbar p {
+     font-weight: 600;
+     font-size: 18px;
 }
 
 @media only screen and (min-width:600px) {
@@ -315,5 +485,61 @@
           font-size: 20px;
           cursor: pointer;
           margin-top: 4vh;
+     }
+
+     .great-success h2 {
+          margin-top: 37vh;
+          font-size: 70px;
+     }
+
+     .great-success h3 {
+          font-size: 32px;
+     }
+
+     .great-success button {
+          width: 150px;
+          padding: 12px 0;
+          font-size: 20px;
+     }
+
+     .great-success img {
+          align-self: flex-start;
+          margin-top: 0;
+          width: 20%;
+     }
+
+     .finish-later>div {
+          width: 30%;
+          height: 38%;
+     }
+
+     .finish-later>div h2 {
+          font-size: 36px;
+     }
+
+     .finish-later>div h3 {
+          font-size: 20px;
+     }
+
+     .finish-later>div a {
+          font-size: 18px;
+     }
+
+     .survey-container {
+          height: 85%;
+     }
+
+
+     .text-wrapper-survey p {
+          font-size: 24px;
+     }
+
+     .text-wrapper-survey p:nth-of-type(2) {
+          font-size: 48px;
+     }
+
+     .survey-progressbar {
+          height: 60px;
+          margin-top: 65px;
      }
 }

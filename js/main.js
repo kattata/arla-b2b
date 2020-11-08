@@ -15,7 +15,31 @@ const _firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(_firebaseConfig);
 const _db = firebase.firestore();
+const _susRef = _db.collection('sustainabilityData');
 let _firebaseUI;
+let _susData = [];
+
+//get sustainability data
+_susRef.orderBy("year", "desc").limit(1).onSnapshot(snapshotData => {
+    _susData = [];
+    snapshotData.forEach(doc => {
+        let data = doc.data();
+        data.id = doc.id;
+        _susData.push(data);
+    });
+    appendDatatoPlaceholder(_susData);
+});
+
+//append data 
+function appendDatatoPlaceholder(susData) {
+    let cowsInput = document.querySelector('#calculator-cows');
+    let milkInput = document.querySelector('#calculator-milk');
+
+    for (const data of susData) {
+        cowsInput.placeholder = `${data.herdYearCows}`;
+        milkInput.placeholder = `${data.herdMilkProduction}`
+    }
+}
 
 // ========== FIREBASE AUTH ========== //
 // Listen on authentication state change
@@ -99,7 +123,7 @@ let rangeOutput = document.querySelector('.calculator-range-output');
 
 rangeInput.addEventListener("input", () => {
     setRangeOutput(rangeInput, rangeOutput);
-    turnInputToNumbers();
+    calculate();
 });
 
 function setRangeOutput(input, output) {
@@ -113,22 +137,30 @@ function setRangeOutput(input, output) {
 }
 
 //Calculator - functionality
-
-function turnInputToNumbers() {
-    let cowsValue = document.querySelector('#calculator-cows').value;
-    let milkValue = document.querySelector('#calculator-milk').value;
+function checkIfInputEmpty() {
+    let cows = document.querySelector('#calculator-cows');
+    let milk = document.querySelector('#calculator-milk');
+    let cowsValue = cows.value;
+    let milkValue = milk.value;
+    let cowsPlaceholder = cows.placeholder;
+    let milkPlaceholder = milk.placeholder;
     let rangeValue = rangeInput.value;
 
-    let cowsNumber = Number(cowsValue);
-    let milkNumber = Number(milkValue);
+    let cowsValueNumber = Number(cowsValue);
+    let milkValueNumber = Number(milkValue);
+    let cowsPlaceholderNumber = Number(cowsPlaceholder);
+    let milkPlaceholderNumber = Number(milkPlaceholder);
     let rangeNumber = Number(rangeValue);
 
-    calculate(cowsNumber, milkNumber, rangeNumber);
-
+    if (cows.value.length == 0) {
+        return Math.round(cowsPlaceholderNumber * milkPlaceholderNumber * rangeNumber * 0.01);
+    } else {
+        return Math.round(cowsValueNumber * milkValueNumber * rangeNumber * 0.01);
+    }
 }
 
-function calculate(a, b, c) {
-    displayCalculation(Math.round(a * b * c * 0.01));
+function calculate() {
+    displayCalculation(checkIfInputEmpty());
 }
 
 function displayCalculation(result) {
@@ -308,3 +340,143 @@ function appendMilkProduction(sustainabilityData) {
 var gradient = chartContainer.createLinearGradient(0, 0, 0, 400);
 gradient.addColorStop(0, 'rgba(250,174,50,1)');
 gradient.addColorStop(1, 'rgba(250,174,50,0)');
+
+// Leaderboar Dropdown
+
+function toggleDropdown() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+window.onclick = function (event) {
+    if (!event.target.matches('.dropbtn')) {
+        let dropdowns = document.getElementsByClassName("dropdown-content");
+        let i;
+        for (i = 0; i < dropdowns.length; i++) {
+            let openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+}
+//progress bar code
+
+const previousBtn = document.querySelector(".button-container button:nth-of-type(1)");
+const nextBtn = document.querySelector(".button-container button:nth-of-type(2)");
+const bullets = document.querySelectorAll(".progress-container .steps");
+const questions = document.querySelectorAll(".questions .category");
+
+//survey done letiables
+const surveyDone = document.querySelector("#survey .great-success");
+const surveyDoneBtn = document.querySelector(".great-success button");
+const surveyForm = document.querySelector("#survey .form");
+
+
+const MAX_STEPS = 3;
+let currentStep = 1;
+let questionIterator = 0;
+previousBtn.disabled = true;
+nextBtn.addEventListener('click', () => {
+    bullets[currentStep].classList.add('completed');
+    currentStep += 1;
+    previousBtn.disabled = false;
+    if (currentStep === MAX_STEPS) {
+        nextBtn.innerHTML = "FINISH"
+    }
+    if (currentStep === MAX_STEPS + 1) {
+        previousBtn.disabled = true;
+
+    }
+
+
+});
+nextBtn.addEventListener('click', () => {
+
+    questionIterator++;
+    if (questionIterator == 1) {
+        questions[1].classList.add('completed');
+        questions[0].classList.remove('completed');
+        questions[2].classList.remove('completed');
+    }
+    if (questionIterator == 2) {
+        questions[2].classList.add('completed');
+        questions[1].classList.remove('completed');
+        questions[0].classList.remove('completed');
+
+    }
+    if (questionIterator == 3) {
+        surveyForm.style.display = "none"
+        surveyDone.style.display = "flex"
+    }
+});
+previousBtn.addEventListener('click', () => {
+    questions[questionIterator].classList.remove('completed');
+    questionIterator--;
+    if (questionIterator == 1) {
+        questions[1].classList.add('completed');
+        questions[2].classList.remove('completed');
+        questions[0].classList.remove('completed');
+    }
+    if (questionIterator == 0) {
+        questions[0].classList.add('completed');
+        questions[2].classList.remove('completed');
+        questions[1].classList.remove('completed');
+    }
+
+});
+
+
+previousBtn.addEventListener('click', () => {
+    bullets[currentStep - 1].classList.remove('completed');
+    currentStep -= 1;
+    if (currentStep === 1) {
+        previousBtn.disabled = true;
+    }
+    if (currentStep <= 3) {
+        nextBtn.innerHTML = "NEXT"
+    }
+});
+
+surveyDoneBtn.addEventListener('click', () => {
+    survey.classList.remove('active');
+    surveyDone.style.display = "none";
+    currentStep = 1;
+    questionIterator = 0;
+    questions[0].classList.add('completed');
+    questions[1].classList.remove('completed');
+    questions[2].classList.remove('completed');
+    bullets[1].classList.remove('completed');
+    bullets[2].classList.remove('completed');
+})
+navigation[1].addEventListener("click", () => {
+    surveyForm.style.display = "flex";
+    surveyIntro.style.display = 'flex';
+})
+
+const surveyFinishLater = document.querySelector("#survey .finish-later");
+const surveyFinishLaterBtn = document.querySelector("#survey .finish-later a");
+const surveyFinishLaterBtnForm = document.querySelector("#survey .form>p");
+
+
+surveyFinishLaterBtnForm.addEventListener('click', () => {
+    surveyFinishLater.style.display = "flex";
+    surveyForm.style.display = "none"
+})
+
+surveyFinishLaterBtn.addEventListener('click', () => {
+    survey.classList.remove('active');
+    surveyFinishLater.style.display = "none";
+})
+
+let now = new Date();
+let start = new Date(now.getFullYear(), 0, 0);
+let diff = (now - start) + ((start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000);
+let oneDay = 1000 * 60 * 60 * 24;
+let day = Math.floor(diff / oneDay);
+console.log('Day of year: ' + day);
+let surveyDeadline = 366 - day;
+console.log('Days left: ' + surveyDeadline);
+
+const surveyDashboardDays = document.querySelector(".text-wrapper-survey p:nth-of-type(2)");
+
+surveyDashboardDays.innerHTML = `${surveyDeadline} DAYS LEFT`

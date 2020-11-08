@@ -103,6 +103,17 @@
         <div class="dashboard">
             <div class="survey dashboard-item">
                 <h2>Survey</h2>
+                <div class="survey-container">
+                    <div class="text-wrapper-survey">
+                        <p>Casper, you have</p>
+                        <p>4 DAYS LEFT</p>
+                        <p>to finish the survey</p>
+                    </div>
+                    <div class="survey-progressbar">
+                        <div class="fill"></div>
+                        <p>Continue (33%)</p>
+                    </div>
+                </div>
             </div>
             <div class="calculator dashboard-item">
                 <h2>Calculator</h2>
@@ -118,8 +129,8 @@
                 </div>
                 <div class="calculator-range-container">
                     <label for="calculator-range" class="calculator-range-label">Years</label>
-                    <input type="range" id="calculator-range" min="0" max="20" value="1">
-                    <output for="calculator-range" class="calculator-range-output">1</output>
+                    <input type="range" id="calculator-range" min="0" max="20" value="0">
+                    <output for="calculator-range" class="calculator-range-output">0</output>
                 </div>
                 <div class="result-container">
                     <p class="result-text">Result:</p>
@@ -130,6 +141,27 @@
             </div>
             <div class="news dashboard-item">
                 <h2>Today's news</h2>
+                <div class="news-container">
+                    <div class="news-item">
+                        <img src="img/flower-girl.svg" alt="Girl with flowers illustration">
+                        <div>
+                            <h4>How do farmers reduce waste?</h4>
+                            <div class="news-text">
+                                <p>By separating and drying the manure solids to use as bedding, farmers can reduce
+                                    their farm's waste. So, they know that they helping the environment!</p>
+                                <!-- <button><a href="#">Read more</a></button> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <h4>What is modern farming?</h4>
+                        <div class="news-text">
+                            <p>Read how from conventional farming become a modern, sustainable farmer.</p>
+                            <!-- <button><a href="#">Read more</a></button> -->
+                        </div>
+                    </div>
+                    <div class="news-item"></div>
+                </div>
             </div>
             <div class="progress dashboard-item">
                 <h2>My progress</h2>
@@ -137,6 +169,42 @@
             </div>
             <div class="lb dashboard-item">
                 <h2>Leaderboard</h2>
+
+                <diV class="leaderboard-carbonProduction-dashboard">
+                    <div class="leaderboard-number-container">
+                        <p class="leaderboard-title-paragraph">Place</p>
+                        <ul>
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                        </ul>
+                    </div>
+
+                    <div class="leaderboard-regions-container">
+                        <p class="leaderboard-title-paragraph">Region</p>
+                        <ul>
+                            <li>Northern Denmark</li>
+                            <li>Southern Denmark</li>
+                            <li>Zeland</li>
+                            <li>Capital Denmark</li>
+                            <li>Central Jutland</li>
+                        </ul>
+                    </div>
+
+                    <div class="leaderboard-carbon-container">
+                        <p class="leaderboard-title-paragraph">CO2 production in 2019</p>
+                        <ul>
+                            <li>8702 t</li>
+                            <li>8959 t</li>
+                            <li>9001 t</li>
+                            <li>9235 t</li>
+                            <li>9387 t</li>
+                        </ul>
+                    </div>
+                </diV>
+
             </div>
         </div>
 
@@ -145,13 +213,25 @@
         </section>
         <!-- leaderboard page -->
         <section id="leaderboard" class="page">
-            <h1>Denmark</h1>
+            <!-- Leaderboard main dropdown -->
+            <div style="width: 100%; text-align: center;">
+                <div class="dropdown">
+                    <button onclick="toggleDropdown()" class="dropbtn">Denmark</button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="#">Scandinavia</a>
+                        <a href="#">Europe</a>
+                    </div>
+                </div>
+            </div>
+
             <div style="float: left;">
                 <diV class="leaderboard-carbonProduction">
                     <h4>Leaderboard</h4>
+                    <p class="leaderboard-description-paragraph">Here you can see how much C02 does each region produce
+                    </p>
                     <hr>
                     <div class="leaderboard-number-container">
-                        <p>Place</p>
+                        <p class="leaderboard-title-paragraph">Place</p>
                         <ul>
                             <li>1</li>
                             <li>2</li>
@@ -161,7 +241,7 @@
                         </ul>
                     </div>
                     <div class="leaderboard-regions-container">
-                        <p>Region</p>
+                        <p class="leaderboard-title-paragraph">Region</p>
                         <ul>
                             <li>Northern Denmark</li>
                             <li>Southern Denmark</li>
@@ -171,7 +251,7 @@
                         </ul>
                     </div>
                     <div class="leaderboard-carbon-container">
-                        <p>CO2 production</p>
+                        <p class="leaderboard-title-paragraph">CO2 production in 2019</p>
                         <ul>
                             <li>8702 t</li>
                             <li>8959 t</li>
@@ -183,14 +263,20 @@
                 </diV>
                 <div class="leaderboard-comparison">
                     <h4>Compare</h4>
+                    <p class="leaderboard-description-paragraph">Here you can compare your CO2 production with others
+                    </p>
                     <hr>
                 </div>
             </div>
             <div class="leaderboard-map" id="leaderboard-map-container">
                 <h4>Map</h4>
+                <p class="leaderboard-description-paragraph">Here you can see which region is the best in sustainability
+                </p>
                 <hr>
+                <div class="map-productivity-container"></div>
                 <img src="./img/country.svg" alt="DK map" class="denamrk-map">
             </div>
+
         </section>
 
     </section>
@@ -217,12 +303,12 @@
         <div class="form">
             <img src="img/arlalogo.png" alt="arla logo">
             <div class="progress-container">
-                <div class="steps ">1</div>
+                <div class="steps completed">1</div>
                 <div class="steps">2</div>
                 <div class="steps">3</div>
             </div>
             <div class="questions">
-                <div class="category">
+                <div class="category completed">
                     <h2>COWS</h2>
                     <label for="cows">Amount of cows</label>
                     <div>
@@ -268,7 +354,21 @@
             </div>
             <p>Finish the survey later</p>
         </div>
-
+        <div class="great-success">
+            <h2>Well done!</h2>
+            <h3>You have finished the survey.</h3>
+            <button>DONE</button>
+            <img src="img/cow_survey.png" alt="">
+        </div>
+        <div class="finish-later">
+            <div class="rectangle">
+                <h2>Data has been saved.</h2>
+                <h3>You can finish the survey later.</h3>
+                <a href="#">
+                    Go back to dashboard
+                </a>
+            </div>
+        </div>
     </section>
 
     <!-- contact page -->
