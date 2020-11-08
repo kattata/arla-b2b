@@ -382,59 +382,7 @@ canvas {
     grid-column: 1 / 3;
 }
 
-.survey-container {
-    padding: 1.2rem;
-    text-align: center;
-}
 
-.days-left {
-    font-weight: 600;
-    font-size: 1.3rem;
-}
-
-.survey-button-container {
-    border: 1px solid var(--gray5);
-    background-color: transparent;
-    border-radius: 8px;
-    margin: 30px 0 1.2rem;
-    position: relative;
-    height: 40px;
-    cursor: pointer;
-}
-
-.survey-button {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: var(--green1);
-    height: 100%;
-    width: 25%;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-    z-index: 0;
-    animation: surveyButtonAnim 0.7s ease 0.1s forwards;
-}
-
-@keyframes surveyButtonAnim {
-    from {
-        width: 0%;
-    }
-
-    to {
-        width: 25%;
-    }
-}
-
-.survey-button-container p {
-    text-align: center;
-    font-weight: 600;
-    line-height: 40px;
-    position: absolute;
-    top: -17px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-}
 
 /* CALCULATOR */
 
@@ -842,22 +790,22 @@ hr {
     }
 
     .news {
-        grid-row: 4 / span 3;
+        grid-row: 4 / span 4;
         grid-column: 1;
     }
 
     .lb {
-        grid-row: 7 / span 3;
+        grid-row: 8 / span 3;
         grid-column: 1;
     }
 
     .progress {
-        grid-row: 10 / span 3;
+        grid-row: 11 / span 3;
         grid-column: 1;
     }
 
     .calculator {
-        grid-row: 13 / span 4;
+        grid-row: 14 / span 4;
         grid-column: 1;
     }
 }
