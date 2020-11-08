@@ -9,6 +9,11 @@ body {
     color: var(--gray1);
 }
 
+canvas {
+    max-width: 450px;
+    margin: 0 auto;
+}
+
 /* ---------- top nav ---------- */
 
 .topnav {
@@ -210,7 +215,7 @@ body {
         transition: all 0.3s ease;
 
     }
-    
+
     .page>nav ul li img {
         margin: 0;
         width: 1.5rem;
@@ -380,7 +385,8 @@ body {
     padding-top: 1rem;
 }
 
-.calculator-cows-container, .calculator-milk-container {
+.calculator-cows-container,
+.calculator-milk-container {
     display: flex;
     flex-direction: column;
 }
@@ -389,7 +395,8 @@ body {
     margin-right: 15px;
 }
 
-#calculator-cows, #calculator-milk {
+#calculator-cows,
+#calculator-milk {
     border: none;
     border: 1px solid var(--gray5);
     border-radius: 8px;
@@ -419,7 +426,7 @@ input[type=range]::-webkit-slider-runnable-thumb {
 
 .calculator-range-label {
     padding-left: 1.2rem;
-    
+
 }
 
 .calculator-range-output {
@@ -483,7 +490,7 @@ input[type=range]::-webkit-slider-runnable-thumb {
     width: 624px;
     height: 284px;
     margin: 0 0 0 16px;
-    box-shadow: 3px 6px 28px 0px rgba(0,0,0,0.04);
+    box-shadow: 3px 6px 28px 0px rgba(0, 0, 0, 0.04);
     border-radius: 12px;
     line-height: 1.6;
 }
@@ -547,17 +554,18 @@ hr {
     width: 624px;
     height: 284px;
     margin: 32px 0 24px 16px;
-    box-shadow: 3px 6px 28px 0px rgba(0,0,0,0.04);
+    box-shadow: 3px 6px 28px 0px rgba(0, 0, 0, 0.04);
     border-radius: 12px;
     /* display: block; */
 }
 
 .leaderboard-map {
     background-color: white;
-    width: 592px; /*544*/
+    width: 592px;
+    /*544*/
     height: 600px;
     margin: 0 16px 24px 0;
-    box-shadow: 3px 6px 28px 0px rgba(0,0,0,0.04);
+    box-shadow: 3px 6px 28px 0px rgba(0, 0, 0, 0.04);
     border-radius: 12px;
     float: right;
     /* display: inline-block; */
