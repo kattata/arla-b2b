@@ -42,52 +42,28 @@ function appendDatatoPlaceholder(susData) {
 }
 
 // ========== FIREBASE AUTH ========== //
-// Listen on authentication state change
-firebase.auth().onAuthStateChanged(function (user) {
-    if (user) { // if user exists and is authenticated
-        userAuthenticated(user);
-    } else { // if user is not logged in
-        userNotAuthenticated();
-    }
-});
+let ui = new firebaseui.auth.AuthUI(firebase.auth());
 
-function userAuthenticated(user) {
-    appendUserData(user);
-    hideTabbar(false);
-    showLoader(false);
+var uiConfig = {
+    callbacks: {
+        signInSuccessWithAuthResult: function (authResult, redirectUrl) {
+            hideLogin();
+            return false;
+        }
+    },
+    signInFlow: 'popup',
+    signInSuccessUrl: '#home',
+    signInOptions: [
+        firebase.auth.EmailAuthProvider.PROVIDER_ID
+    ]
+};
+
+ui.start('#firebaseui-auth-container', uiConfig);
+
+function hideLogin() {
+    let loginPage = document.querySelector('#login');
+    loginPage.style.display = "none";
 }
-
-function userNotAuthenticated() {
-    hideTabbar(true);
-    showPage("login");
-
-    // Firebase UI configuration
-    const uiConfig = {
-        credentialHelper: firebaseui.auth.CredentialHelper.NONE,
-        signInOptions: [
-            firebase.auth.EmailAuthProvider.PROVIDER_ID,
-            firebase.auth.PhoneAuthProvider.PROVIDER_ID
-        ],
-        signInSuccessUrl: '#home'
-    };
-    // Init Firebase UI Authentication
-    if (!_firebaseUI) {
-        _firebaseUI = new firebaseui.auth.AuthUI(firebase.auth());
-    }
-    _firebaseUI.start('#firebaseui-auth-container', uiConfig);
-    showLoader(false);
-}
-
-// show and hide tabbar
-function hideTabbar(hide) {
-    let tabbar = document.querySelector('#tabbar');
-    if (hide) {
-        tabbar.classList.add("hide");
-    } else {
-        tabbar.classList.remove("hide");
-    }
-}
-
 
 // sign out user
 function logout() {

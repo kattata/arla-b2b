@@ -289,6 +289,111 @@ canvas {
     left: 0;
 }
 
+#login {
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    overflow-y: hidden;
+}
+
+.login-container-left {
+    width: 60%;
+    position: relative;
+    height: 100%;
+}
+
+.hero {
+    position: absolute;
+    top: 130px;
+    margin-left: 50px;
+    width: 50%;
+    color: white;
+
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin-bottom: 0;
+}
+
+.hero h2:nth-child(2) {
+    font-weight: 300;
+    font-size: 1.7rem;
+    margin-top: 5px;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(70%);
+}
+
+.login-cow-container {
+    position: absolute;
+    width: 250px;
+    height: 300px;
+    bottom: -80px;
+    margin-left: 50px;
+}
+
+.login-cow {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.hi-container {
+    position: absolute;
+    top: -90px;
+    right: -50px;
+    width: 150px;
+}
+
+.hi-container p {
+    content: "Hi, there! Nice to see you again";
+    position: absolute;
+    top: 30px;
+    left: 45px;
+    z-index: 120;
+    width: 110px;
+}
+
+.login-bubble {
+    position: absolute;
+    z-index: 119;
+}
+
+.login-container-right {
+    width: 40%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding: 50px;
+}
+
+.login-container-right img{
+    width: 125px;
+    margin-bottom: 10px;
+}
+
+.login-container-right h1 {
+    display: none;
+}
+
+.welcome {
+    display: block;
+    font-size: 2rem;
+    text-align: center;
+}
+
 .hide {
     visibility: hidden;
     opacity: 0;
@@ -297,16 +402,9 @@ canvas {
 
 /* ---------- authentication styling ---------- */
 #firebaseui-auth-container {
-    position: absolute;
-    top: 50%;
     width: 100%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-}
-
-.firebaseui-container {
-    font-family: var(--font-family);
-    font: 16px var(--font-family);
+    font-family: Arla interface;
+    margin-top: 10px;
 }
 
 .firebaseui-title {
@@ -807,5 +905,14 @@ hr {
     .calculator {
         grid-row: 14 / span 4;
         grid-column: 1;
+    }
+
+    .login-container-left {
+        display: none;
+    }
+
+    .login-container-right {
+        width: 100%;
+        padding: 20px;
     }
 }

@@ -380,12 +380,29 @@
 
     <!-- login page -->
     <section id="login" class="page">
-        <div class="logocontainer">
-            <img id="loginlogo" src="./img/arlalogo.png" alt="">
+        <div class="login-container-left">
+            <img src="img/login.jpg" alt="Field Image" class="hero-img">
+            <div class="hero">
+                <h2>Help us reduce the ecological impact of farming</h2>
+                <h2>by providing us with your farm's statistics every quarter</h2>
+            </div>
+            <div class="login-cow-container">
+                <img src="img/cow-login.png" alt="Cow welcome" class="login-cow"> 
+                <div class="hi-container">
+                    <img src="img/bubble.svg" alt="Talk bubble" class="login-bubble">
+                    <p>Hi, there! Nice to see you again</p>
+                </div>
+            </div>
+        </div>
+        <div class="login-container-right">
+            <img id="loginlogo" src="img/arlalogo.png" alt="">
+            <h2 class="welcome">Welcome to Arlagarden Plus</h2>
+            <div id="firebaseui-auth-container"></div>
         </div>
         <!-- firebase auth container  -->
-        <section id="firebaseui-auth-container"></section>
+        </div>
     </section>
+
     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
     <!-- Add Firebase products that you want to use -->
