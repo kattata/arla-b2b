@@ -22,7 +22,7 @@ canvas {
     display: flex;
     width: 100vw;
     min-width: 100vw;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
 }
 
@@ -31,6 +31,10 @@ canvas {
     align-items: center;
     width: 60px;
     margin-left: 20px;
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    float: left;
 }
 
 .topnav a img {
@@ -55,6 +59,7 @@ canvas {
     flex-direction: column;
     align-items: center;
 }
+
 
 .curtain.active {
     left: 0;
@@ -562,6 +567,11 @@ input[type=range]::-webkit-slider-runnable-thumb {
 }
 
 /*-----------leaderboard styling----------*/
+.fa-question-circle {
+    float: right;
+    margin: 16px 0 0 16px;
+}
+
 .leaderboard-carbonProduction {
     background-color: white;
     width: calc(324px + (624 - 324) * ((100vw - 300px) / (1600 - 300)));
@@ -681,15 +691,23 @@ hr {
 }
 
 .map-productivity-container {
-    width: 250px;
-    height: 150px;
+    width: 224px;
+    height: 124px;
     background-color: #fff;
     box-shadow: 3px 6px 28px 0px rgba(0, 0, 0, 0.04);
     border-radius: 12px;
     right: 2%;
     margin-top: 16px;
     position: absolute;
+    padding: 16px;
+    margin-right: 16px;
     display: none;
+}
+
+.map-productivity-container> p {
+    font-size: .8em;
+    line-height: 1;
+    font-weight: 600;
 }
 
 .click-me {
@@ -701,13 +719,9 @@ hr {
     cursor: pointer;
 }
 
-
 .click-me:hover + .map-productivity-container {
     display: block;
-    
 }
-
-
 
 /*-------Main dropdown---------*/
 .dropbtn {
