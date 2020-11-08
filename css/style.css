@@ -616,9 +616,11 @@ input[type=range]::-webkit-slider-runnable-thumb {
 /*-----------leaderboard styling----------*/
 .leaderboard-carbonProduction {
     background-color: white;
-    width: 624px;
-    height: 284px;
-    margin: 0 0 0 16px;
+    width: calc(324px + (624 - 324) * ((100vw - 300px) / (1600 - 300)));
+    /* width: 624px; */
+    height: calc(348px + (292 - 348) * ((100vw - 300px) / (1600 - 300)));
+    /* height: 284px; */
+    margin: 0 0 0 24px;
     box-shadow: 3px 6px 28px 0px rgba(0, 0, 0, 0.04);
     border-radius: 12px;
     line-height: 1.6;
@@ -665,6 +667,7 @@ input[type=range]::-webkit-slider-runnable-thumb {
     list-style-type: none;
     display: inline-block;
     margin-right: 24px;
+    float: right;
 }
 
 .leaderboard-carbon-container ul {
@@ -695,9 +698,11 @@ hr {
 
 .leaderboard-comparison {
     background-color: white;
-    width: 624px;
-    height: 284px;
-    margin: 32px 0 24px 16px;
+    width: calc(324px + (624 - 324) * ((100vw - 300px) / (1600 - 300)));
+    /* width: 624px; */
+    height: calc(348px + (292 - 348) * ((100vw - 300px) / (1600 - 300)));
+    /* height: 284px; */
+    margin: 32px 0 24px 24px;
     box-shadow: 3px 6px 28px 0px rgba(0, 0, 0, 0.04);
     border-radius: 12px;
     line-height: 1.6;
@@ -706,10 +711,11 @@ hr {
 
 .leaderboard-map {
     background-color: white;
-    width: 592px;
-    /*544*/
-    height: 600px;
-    margin: 0 16px 24px 0;
+    /* width: 592px;
+    height: 600px; */
+    width: calc(324px + (592 - 324) * ((100vw - 300px) / (1600 - 300)));
+    height: calc(300px + (616 - 300) * ((100vw - 300px) / (1600 - 300)));
+    margin: 0 24px 24px 0;
     box-shadow: 3px 6px 28px 0px rgba(0, 0, 0, 0.04);
     border-radius: 12px;
     line-height: 1.6;
