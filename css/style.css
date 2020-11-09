@@ -245,7 +245,7 @@ body {
         justify-content: space-between;
         border-bottom-right-radius: 8px;
         border-top-right-radius: 8px;
-        height: 95%;
+        height: 87vh;
         margin-right: 15px;
     }
 
@@ -531,7 +531,7 @@ body {
     grid-template-columns: repeat(9, 1fr);
     grid-template-rows: 1fr 1fr;
     width: 82%;
-    height: 95%;
+    height: 87vh;
     border-bottom-left-radius: 8px;
     border-top-left-radius: 8px;
     background-color: #fff;
