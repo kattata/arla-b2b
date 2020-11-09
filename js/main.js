@@ -79,6 +79,28 @@ function appendUserData(user) {
   `;
 }
 
+// change nav cow img
+let navCow = document.querySelector('.nav-cow-img');
+let progressLi = document.querySelector('.progress-li');
+let dashboardLi = document.querySelector('.dashboard-li');
+let leaderboardLi = document.querySelector('.leaderboard-li');
+
+dashboardLi.addEventListener('click', function () {
+    changeCow('dashboard');
+});
+
+progressLi.addEventListener('click', function () {
+    changeCow('progress');
+});
+
+leaderboardLi.addEventListener('click', function () {
+    changeCow('leaderboard');
+});
+
+function changeCow(src) {
+    navCow.src = `img/${src}-cow.png`;
+}
+
 const burger = document.querySelector('.fa-bars');
 const curtain = document.querySelector('.curtain');
 const close = document.querySelector('.fa-times');
