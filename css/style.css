@@ -64,7 +64,7 @@ canvas {
 .curtain .fa-times {
     align-self: flex-end;
     margin-top: 20px;
-    margin-right: 20px;
+    margin-right: 30px;
     font-size: 8vw;
     color: #fff;
 }
@@ -99,7 +99,7 @@ canvas {
 .account-details h4 {
     color: #fff;
     margin: 0;
-
+    padding: 0;
 }
 
 .account-details form {
@@ -702,9 +702,9 @@ hr {
 }
 
 
-.click-me:hover + .map-productivity-container {
+.click-me:hover+.map-productivity-container {
     display: block;
-    
+
 }
 
 
