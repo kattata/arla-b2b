@@ -807,6 +807,7 @@ input[type=range]::-webkit-slider-runnable-thumb {
     list-style-type: none;
     display: inline-block;
     margin-right: 24px;
+    float: right;
 }
 
 .leaderboard-carbon-container ul {
@@ -871,7 +872,7 @@ hr {
     position: relative;
 }
 
-.map-productivity-container {
+/* .map-productivity-container {
     width: 224px;
     height: 124px;
     background-color: #fff;
@@ -902,7 +903,7 @@ hr {
 
 .click-me:hover+.map-productivity-container {
     display: block;
-}
+} */
 
 /*-------Main dropdown---------*/
 .dropbtn {
