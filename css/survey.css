@@ -7,6 +7,7 @@
      font-family: Arla inertface;
      overflow: hidden;
      position: fixed;
+     z-index: 5;
      top: 0;
      /* change it to 100% */
      left: 100%;
@@ -166,10 +167,12 @@
      height: 100%;
      opacity: 0;
      transition: all .3s ease;
+     z-index: 0;
 }
 
 .questions .category.completed {
      opacity: 1;
+     z-index: 1;
 }
 
 .questions .category h2 {
@@ -194,7 +197,7 @@
 }
 
 .questions>div input {
-     width: 100%;
+     width: 98%;
      height: 35px;
      padding: 0;
      margin: 0;
@@ -202,7 +205,7 @@
      border-radius: 8px;
      box-shadow: -1px 3px 5px 0px rgba(0, 0, 0, 0.1);
      font-size: 18px;
-
+     padding-left: 2%;
 }
 
 .questions>div input:focus {
@@ -344,19 +347,23 @@
 
 .survey-container {
      width: 95%;
-     height: 77%;
+     /* height: ; */
      margin: 10px;
+     margin-top: 10px;
      font-family: Arla inertface;
      padding: 0;
      display: flex;
      justify-content: center;
+     flex-direction: column;
+     align-items: center;
      flex-wrap: wrap;
 }
 
 .text-wrapper-survey {
      width: 100%;
      font-family: Arla inertface;
-     margin: 35px 0;
+     margin: 20px 0 10px;
+     height: fit-content;
 }
 
 .text-wrapper-survey p {
@@ -378,7 +385,7 @@
      display: flex;
      justify-content: center;
      align-items: center;
-     margin: 0 10px;
+     margin: 20px 0;
      border-radius: 8px;
      height: 40px;
      position: relative;
@@ -540,6 +547,11 @@
 
      .finish-later>div a {
           font-size: 18px;
+     }
+
+     .survey-container {
+          justify-content: space-between;
+          margin-top: 60px;
      }
 
      .survey-progressbar {
