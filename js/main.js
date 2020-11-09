@@ -111,11 +111,9 @@ progressLi.addEventListener('click', function () {
 });
 
 leaderboardLi.addEventListener('click', function () {
-    navCow.src = `img/leaderboard-cow.png`;
+    navCow.src = `img/dashboard-cow.png`;
     cowText.innerHTML = "Take a look at other regions' results";
 });
-
-
 
 
 // Calculator - range input
