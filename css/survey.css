@@ -37,6 +37,7 @@
      margin-top: 20px;
      align-items: center;
      position: absolute;
+     cursor: pointer;
 }
 
 .intro span i,
@@ -198,6 +199,7 @@
      padding: 0;
      margin: 0;
      border: none;
+     border-radius: 8px;
      box-shadow: -1px 3px 5px 0px rgba(0, 0, 0, 0.1);
      font-size: 18px;
 

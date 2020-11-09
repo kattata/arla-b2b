@@ -26,7 +26,7 @@ canvas {
     display: flex;
     width: 100vw;
     min-width: 100vw;
-    /* justify-content: space-between; */
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -187,12 +187,15 @@ canvas {
 .curtain ul a {
     text-decoration: none;
     color: white;
+    width: auto;
 }
 
 .curtain ul li {
     display: flex;
+    padding: 2px 0;
     margin: 20px 0;
 }
+
 
 .curtain ul li i {
     margin: 0;
@@ -237,7 +240,7 @@ canvas {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: flex-end;
+        justify-content: space-between;
         border-bottom-right-radius: 8px;
         border-top-right-radius: 8px;
     }
@@ -290,7 +293,7 @@ canvas {
     .nav-cow {
         width: 220px;
         margin: 20px 0;
-        margin-bottom: 60px;
+        margin-top: 60px;
         height: 220px;
         background-color: var(--green1);
         border-radius: 50%;
@@ -810,7 +813,6 @@ input[type=range]::-webkit-slider-runnable-thumb {
     list-style-type: none;
     display: inline-block;
     margin-right: 24px;
-    float: right;
 }
 
 .leaderboard-carbon-container ul {
@@ -899,7 +901,6 @@ hr {
     top: 35%;
     right: 25%;
     position: absolute;
-    z-index: 100;
     font-weight: 600;
     cursor: pointer;
 }
