@@ -23,7 +23,7 @@ canvas {
     display: flex;
     width: 100vw;
     min-width: 100vw;
-    /* justify-content: space-between; */
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -184,6 +184,7 @@ canvas {
 .curtain ul a {
     text-decoration: none;
     color: white;
+    width: auto;
 }
 
 .curtain ul li {
@@ -809,7 +810,6 @@ input[type=range]::-webkit-slider-runnable-thumb {
     list-style-type: none;
     display: inline-block;
     margin-right: 24px;
-    float: right;
 }
 
 .leaderboard-carbon-container ul {
