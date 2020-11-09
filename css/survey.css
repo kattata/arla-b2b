@@ -177,6 +177,7 @@
      font-weight: 100;
      margin: 1vh 0;
      font-family: Arla inertface;
+     font-weight: 600;
 }
 
 .questions label {
@@ -207,9 +208,9 @@
 
 .questions>div i {
      position: absolute;
-     left: 105%;
-     top: 50%;
-     transform: translateY(-50%);
+     /* left: 105%; */
+     /* top: 50%; */
+     transform: translateY(-10%);
 }
 
 .button-container {
@@ -223,6 +224,7 @@
      height: 35px;
      background-color: #fff;
      border: 1px solid black;
+     border-radius: 8px;
      outline: none;
      transition: all .3s ease;
 }
@@ -278,6 +280,7 @@
      align-self: center;
      margin-top: 5vh;
      cursor: pointer;
+     border-radius: 8px;
 }
 
 .great-success img {
@@ -341,6 +344,9 @@
      margin: 10px;
      font-family: Arla inertface;
      padding: 0;
+     display: flex;
+     justify-content: center;
+     flex-wrap: wrap;
 }
 
 .text-wrapper-survey {
@@ -360,6 +366,7 @@
 .text-wrapper-survey p:nth-of-type(2) {
      font-size: 25px;
      margin: 10px 0;
+     font-weight: 600;
 }
 
 .survey-progressbar {
@@ -393,6 +400,7 @@
      top: -7px;
      left: 50%;
      transform: translateX(-50%);
+     white-space: nowrap;
 }
 
 @media only screen and (min-width:600px) {
