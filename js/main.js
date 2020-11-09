@@ -98,22 +98,22 @@ let navCow = document.querySelector('.nav-cow-img');
 let progressLi = document.querySelector('.progress-li');
 let dashboardLi = document.querySelector('.dashboard-li');
 let leaderboardLi = document.querySelector('.leaderboard-li');
+let cowText = document.querySelector('.nav-cow p');
 
 dashboardLi.addEventListener('click', function () {
-    changeCow('dashboard');
+    navCow.src = `img/dashboard-cow.png`;
+    cowText.innerHTML = "Hello, Casper! It's 10°C today and cloudy, so don't forget your jacket.";
 });
 
 progressLi.addEventListener('click', function () {
-    changeCow('progress');
+    navCow.src = `img/progress-cow.png`;
+    cowText.innerHTML = 'Your progress has slowed down lately... Keep working!';
 });
 
 leaderboardLi.addEventListener('click', function () {
-    changeCow('leaderboard');
+    navCow.src = `img/leaderboard-cow.png`;
+    cowText.innerHTML = "Take a look at other regions' results";
 });
-
-function changeCow(src) {
-    navCow.src = `img/${src}-cow.png`;
-}
 
 
 
