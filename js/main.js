@@ -101,17 +101,7 @@ function changeCow(src) {
     navCow.src = `img/${src}-cow.png`;
 }
 
-const burger = document.querySelector('.fa-bars');
-const curtain = document.querySelector('.curtain');
-const close = document.querySelector('.fa-times');
 
-
-burger.addEventListener('click', () => {
-    curtain.classList.toggle("active");
-})
-close.addEventListener('click', () => {
-    curtain.classList.toggle("active");
-})
 
 
 // Calculator - range input

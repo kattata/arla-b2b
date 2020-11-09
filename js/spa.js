@@ -30,10 +30,11 @@ for (let i = 2; i < 4; i++) {
     })
 }
 navigation[1].addEventListener("click", () => {
-    survey.classList.add("active");
     hideTabs();
+    hidePages()
+    survey.classList.add("active");
     navigation[0].classList.add("active");
-
+    dashboard.style.display = 'grid';
 })
 navigation[0].addEventListener("click", () => {
     hidePages()
