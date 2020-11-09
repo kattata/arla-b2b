@@ -174,7 +174,7 @@ _dataRef.orderBy("year").onSnapshot(snapshotData => {
         _sustainabilityData.push(data); // push the data object to the global array _sustainabilityData
     });
     console.log(_sustainabilityData);
-    appendSelfSuffiency(_sustainabilityData); // call appendCows with _sustainabilityData as function argument
+    appendSelfSuffiency(_sustainabilityData); // call appendSelfSuffiency with _sustainabilityData as function argument
     appendCarbonFootprint(_sustainabilityData); //call appendCarbonFootprint with _sustainabilityData as function argument
     appendMilkProduction(_sustainabilityData); //call appendMilkProduction with _sustainabilityData as function argument
 });
