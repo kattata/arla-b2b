@@ -345,14 +345,14 @@ body {
         left: -10px;
     }
 
-    
+
     .nav-hi-container {
         position: absolute;
         width: 170px;
         top: -40px;
         right: 0;
     }
-    
+
     .nav-hi-container p {
         position: absolute;
         top: 10px;
@@ -362,7 +362,7 @@ body {
         text-align: center;
         font-size: 14px;
     }
-    
+
     .progress-cow-text {
         top: ;
     }
@@ -374,7 +374,7 @@ body {
     .leaderboard-cow {
         width: 70%;
     }
-    
+
     .nav-hi-container img {
         width: 100%;
         z-index: 1;
@@ -434,7 +434,7 @@ body {
     background-color: white;
     width: 100vw;
     height: 100vh;
-    z-index: -1;
+    z-index: 100;
     position: fixed;
     top: 0;
     left: 0;
@@ -850,10 +850,7 @@ body {
 canvas {
     position: relative;
     margin: 0 auto;
-    max-width: 75%;
-    /* max-width: 450px;
-    margin: 0 auto;
-    display: block; */
+    max-width: 79%;
 }
 
 /* buttons for selecting each chart */
@@ -1097,6 +1094,10 @@ hr {
     float: right;
 }
 
+#leaderboard.page {
+    height: 87vh;
+}
+
 @media only screen and (max-width: 600px) {
     .topnav-element-left {
         display: none;
@@ -1137,6 +1138,11 @@ hr {
 
     #leaderboard.page {
         background-color: var(--green1);
+        height: auto;
+    }
+
+    .progress.dashboard-item {
+        overflow: visible;
     }
 
     .survey {
