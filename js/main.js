@@ -28,6 +28,7 @@ _susRef.orderBy("year", "desc").limit(1).onSnapshot(snapshotData => {
         _susData.push(data);
     });
     appendDatatoPlaceholder(_susData);
+    appendDatatoSurveyPlaceholder(_susData);
 });
 
 //append data 
