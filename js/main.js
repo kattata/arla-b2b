@@ -28,19 +28,32 @@ _susRef.orderBy("year", "desc").limit(1).onSnapshot(snapshotData => {
         _susData.push(data);
     });
     appendDatatoPlaceholder(_susData);
-    appendDatatoSurveyPlaceholder(_susData);
 });
 
 //append data 
 function appendDatatoPlaceholder(susData) {
     let cowsInput = document.querySelector('#calculator-cows');
     let milkInput = document.querySelector('#calculator-milk');
+    let surveyCows = document.querySelector('.survey-cows');
+    let surveyMilk = document.querySelector('.survey-milk');
+    let surveyFeed = document.querySelector('.survey-feed');
+    let surveySuff = document.querySelector('.survey-suff');
+    let surveyDiesel = document.querySelector('.survey-diesel');
+    let surveyElectricity = document.querySelector('.survey-electricity');
 
     for (const data of susData) {
         cowsInput.placeholder = `${data.herdYearCows}`;
-        milkInput.placeholder = `${data.herdMilkProduction}`
+        milkInput.placeholder = `${data.herdMilkProduction}`;
+        surveyCows.placeholder = `${data.herdYearCows}`;
+        surveyMilk.placeholder = `${data.herdMilkProduction}`;
+        surveyFeed.placeholder = `${data.herdSelfSuffiencyInFeed}`;
+        surveySuff.placeholder = `${data.cowsFeedConsumption}`;
+        surveyDiesel.placeholder = `${data.diesel}`;
+        surveyElectricity.placeholder = `${data.electricity}`;
     }
 }
+
+
 // ========== FIREBASE AUTH ========== //
 let ui = new firebaseui.auth.AuthUI(firebase.auth());
 

@@ -142,27 +142,24 @@ let surveySuff = document.querySelector('.survey-suff');
 let surveyDiesel = document.querySelector('.survey-diesel');
 let surveyElectricity = document.querySelector('.survey-electricity');
 
-// // add data to firebase
-// nextBtn.addEventListener('click', function () {
-//     if (surveyDiesel.value.length > 0) {
-//         createNewDoc(surveyDiesel.value, surveyElectricity.value)
-//     }
-// })
-
-// // create new document in firebase
-// function createNewDoc(dieselValue, electricityValue) {
-//     let newDoc = {
-//         diesel: dieselValue,
-//         electricity: electricityValue,
-//         year: 2020
-//     }
-
-//     _susRef.add(newDoc);
-// }
-
-function appendDataToSurveyPlaceholders(susData) {
-    for (const data of susData) {
-        surveyDiesel.placeholder = `${data.diesel}`;
-        surveyMilk.placeholder = `${data.herdMilkProduction}`;
+// add data to firebase
+nextBtn.addEventListener('click', function () {
+    if (surveyDiesel.value.length > 0) {
+        createNewDoc();
     }
+})
+
+// create new document in firebase
+function createNewDoc() {
+    let newDoc = {
+        herdYearCows: Number(surveyCows.value),
+        herdMilkProduction: Number(surveyMilk.value),
+        cowsFeedConsumption: Number(surveyFeed.value),
+        herdSelfSuffiencyInFeed: Number(surveySuff),
+        diesel: Number(surveyDiesel.value),
+        electricity: Number(surveyElectricity.value),
+        year: 2020
+    }
+
+    _susRef.add(newDoc);
 }
