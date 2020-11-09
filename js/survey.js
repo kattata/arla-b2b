@@ -132,3 +132,37 @@ console.log('Days left: ' + surveyDeadline);
 const surveyDashboardDays = document.querySelector(".text-wrapper-survey p:nth-of-type(2)");
 
 surveyDashboardDays.innerHTML = `${surveyDeadline} DAYS LEFT`;
+
+// FIREBASE
+
+let surveyCows = document.querySelector('.survey-cows');
+let surveyMilk = document.querySelector('.survey-milk');
+let surveyFeed = document.querySelector('.survey-feed');
+let surveySuff = document.querySelector('.survey-suff');
+let surveyDiesel = document.querySelector('.survey-diesel');
+let surveyElectricity = document.querySelector('.survey-electricity');
+
+// // add data to firebase
+// nextBtn.addEventListener('click', function () {
+//     if (surveyDiesel.value.length > 0) {
+//         createNewDoc(surveyDiesel.value, surveyElectricity.value)
+//     }
+// })
+
+// // create new document in firebase
+// function createNewDoc(dieselValue, electricityValue) {
+//     let newDoc = {
+//         diesel: dieselValue,
+//         electricity: electricityValue,
+//         year: 2020
+//     }
+
+//     _susRef.add(newDoc);
+// }
+
+function appendDataToSurveyPlaceholders(susData) {
+    for (const data of susData) {
+        surveyDiesel.placeholder = `${data.diesel}`;
+        surveyMilk.placeholder = `${data.herdMilkProduction}`;
+    }
+}

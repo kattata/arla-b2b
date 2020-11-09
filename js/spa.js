@@ -75,21 +75,21 @@ close.addEventListener('click', () => {
 
 const navMobileElements = document.querySelectorAll(".curtain ul li");
 
-navMobileElements[0].addEventListener('click', ()=>{
-   hidePages()
+navMobileElements[0].addEventListener('click', () => {
+    hidePages()
     hideTabs();
     navigation[0].classList.add("active")
     dashboard.style.display = 'grid';
     curtain.classList.toggle("active");
 
 })
-navMobileElements[1].addEventListener('click', ()=>{
-    setTimeout( ()=>{
-    survey.classList.add("active");
-    },450)
+navMobileElements[1].addEventListener('click', () => {
+    setTimeout(() => {
+        survey.classList.add("active");
+    }, 450)
     surveyForm.style.display = "flex";
     surveyIntro.style.display = 'flex';
-     hidePages();
+    hidePages();
     dashboard.style.display = 'grid';
     hideTabs();
     navigation[0].classList.add("active");
@@ -97,7 +97,7 @@ navMobileElements[1].addEventListener('click', ()=>{
 })
 
 
-navMobileElements[2].addEventListener('click', ()=>{
+navMobileElements[2].addEventListener('click', () => {
     hidePages();
     hideTabs();
     pages[0].style.display = 'block';
@@ -105,7 +105,7 @@ navMobileElements[2].addEventListener('click', ()=>{
     navigation[2].classList.add("active")
     curtain.classList.toggle("active");
 })
-navMobileElements[3].addEventListener('click', ()=>{
+navMobileElements[3].addEventListener('click', () => {
     hidePages();
     hideTabs();
     pages[1].style.display = 'block';

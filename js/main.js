@@ -28,6 +28,7 @@ _susRef.orderBy("year", "desc").limit(1).onSnapshot(snapshotData => {
         _susData.push(data);
     });
     appendDatatoPlaceholder(_susData);
+    appendDatatoSurveyPlaceholder(_susData);
 });
 
 //append data 
@@ -100,19 +101,6 @@ leaderboardLi.addEventListener('click', function () {
 function changeCow(src) {
     navCow.src = `img/${src}-cow.png`;
 }
-
-const burger = document.querySelector('.fa-bars');
-const curtain = document.querySelector('.curtain');
-const close = document.querySelector('.fa-times');
-
-
-burger.addEventListener('click', () => {
-    curtain.classList.toggle("active");
-})
-close.addEventListener('click', () => {
-    curtain.classList.toggle("active");
-})
-
 
 // Calculator - range input
 let rangeInput = document.querySelector('#calculator-range');
