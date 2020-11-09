@@ -66,3 +66,57 @@ logo.addEventListener('click', () => {
     dashboard.style.display = 'grid';
 })
 
+const burger = document.querySelector('.fa-bars');
+const curtain = document.querySelector('.curtain');
+const close = document.querySelector('.fa-times');
+
+
+burger.addEventListener('click', () => {
+    curtain.classList.toggle("active");
+})
+close.addEventListener('click', () => {
+    curtain.classList.toggle("active");
+})
+
+// spa mobile code
+
+const navMobileElements = document.querySelectorAll(".curtain ul li");
+
+navMobileElements[0].addEventListener('click', ()=>{
+   hidePages()
+    hideTabs();
+    navigation[0].classList.add("active")
+    dashboard.style.display = 'grid';
+    curtain.classList.toggle("active");
+
+})
+navMobileElements[1].addEventListener('click', ()=>{
+    setTimeout( ()=>{
+    survey.classList.add("active");
+    },450)
+    surveyForm.style.display = "flex";
+    surveyIntro.style.display = 'flex';
+     hidePages();
+    dashboard.style.display = 'grid';
+    hideTabs();
+    navigation[0].classList.add("active");
+    curtain.classList.toggle("active");
+})
+
+
+navMobileElements[2].addEventListener('click', ()=>{
+    hidePages();
+    hideTabs();
+    pages[0].style.display = 'block';
+    dashboard.style.display = 'none';
+    navigation[2].classList.add("active")
+    curtain.classList.toggle("active");
+})
+navMobileElements[3].addEventListener('click', ()=>{
+    hidePages();
+    hideTabs();
+    pages[1].style.display = 'block';
+    dashboard.style.display = 'none';
+    navigation[3].classList.add("active")
+    curtain.classList.toggle("active");
+})
