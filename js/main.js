@@ -164,22 +164,22 @@ document.getElementById("myChart2").style.display = "none";
 
 // gradient background colors for charts
 
-var ctx = document.getElementById("myChart").getContext("2d");
-var gradient = ctx.createLinearGradient(0, 0, 0, 400);
+let ctx = document.getElementById("myChart").getContext("2d");
+let gradient = ctx.createLinearGradient(0, 0, 0, 400);
 gradient.addColorStop(0, 'rgba(59,68,67,1)');
 gradient.addColorStop(1, 'rgba(59,68,67,0)');
-// var ctx = document.getElementById("myChart").getContext("2d");
-// var gradient = ctx.createLinearGradient(0, 0, 0, 400);
+// let ctx = document.getElementById("myChart").getContext("2d");
+// let gradient = ctx.createLinearGradient(0, 0, 0, 400);
 // gradient.addColorStop(0, 'rgba(233,228,227,1)');
 // gradient.addColorStop(1, 'rgba(233,228,227,0)');
 
-var ctx1 = document.getElementById("myChart1").getContext("2d");
-var gradient1 = ctx1.createLinearGradient(0, 0, 0, 400);
+let ctx1 = document.getElementById("myChart1").getContext("2d");
+let gradient1 = ctx1.createLinearGradient(0, 0, 0, 400);
 gradient1.addColorStop(0, 'rgba(255,208,0,1)');
 gradient1.addColorStop(1, 'rgba(255,208,0,0)');
 
-var ctx2 = document.getElementById("myChart2").getContext("2d");
-var gradient2 = ctx2.createLinearGradient(0, 0, 0, 400);
+let ctx2 = document.getElementById("myChart2").getContext("2d");
+let gradient2 = ctx2.createLinearGradient(0, 0, 0, 400);
 gradient2.addColorStop(0, 'rgba(212,233,249,1)');
 gradient2.addColorStop(1, 'rgba(212,233,249,0)');
 
@@ -330,12 +330,6 @@ function appendMilkProduction(sustainabilityData) {
         }
     });
 }
-
-
-
-var gradient = chartContainer.createLinearGradient(0, 0, 0, 400);
-gradient.addColorStop(0, 'rgba(250,174,50,1)');
-gradient.addColorStop(1, 'rgba(250,174,50,0)');
 
 // Leaderboar Dropdown
 
