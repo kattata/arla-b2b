@@ -27,8 +27,38 @@ canvas {
     align-items: center;
 }
 
-.topnav a {
+.topnav-element-left {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.topnav-element-left a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.topnav-element-left a:hover {
+    opacity: .5;
+    transition: all 0.3s ease;
+}
+
+.topnav-element-right {
+    margin-left: auto;
     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-element {
+    display: block;
+    padding: 14px 8px;
+}
+
+.topnav a {
+    display: block;
     align-items: center;
     width: 60px;
     margin-left: 20px;
@@ -40,6 +70,15 @@ canvas {
 
 .topnav a img {
     width: 100%;
+}
+
+.topnav a:last-child {
+    float: right;
+}
+
+.casper-profile-info {
+    /* float: right;  */
+    margin-left: auto;
 }
 
 .topnav .fa-bars {
@@ -285,7 +324,6 @@ canvas {
         width: 100%;
         z-index: 1;
     }
-
 }
 
 
@@ -771,6 +809,7 @@ input[type=range]::-webkit-slider-runnable-thumb {
     list-style-type: none;
     display: inline-block;
     margin-right: 24px;
+    float: right;
 }
 
 .leaderboard-carbon-container ul {
@@ -835,7 +874,7 @@ hr {
     position: relative;
 }
 
-.map-productivity-container {
+/* .map-productivity-container {
     width: 224px;
     height: 124px;
     background-color: #fff;
@@ -865,7 +904,7 @@ hr {
 
 .click-me:hover+.map-productivity-container {
     display: block;
-}
+} */
 
 /*-------Main dropdown---------*/
 .dropbtn {
@@ -917,6 +956,16 @@ hr {
     padding: 0;
     display: flex;
     float: right;
+}
+
+@media only screen and (max-width: 600px) {
+    .topnav-element-left {
+        display: none;
+    }
+
+    .topnav-element-right {
+        display: none;
+    }
 }
 
 /* ---------- mobile and tablet ---------- */

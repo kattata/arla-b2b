@@ -15,6 +15,7 @@
      background-color: #F9F9F9;
      display: block;
      transition: left .5s ease-in-out;
+     z-index: 3;
 }
 
 #survey.active {
