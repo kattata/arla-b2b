@@ -173,8 +173,13 @@
                 </div>
             </div>
             <div class="progress dashboard-item">
-                <h2>My progress</h2>
+                <h2>My progress <button onclick="hideFunction()">CO2 Production</button><button
+                        onclick="hideFunction1()">Self Suffiency</button><button onclick="hideFunction2()">Milk
+                        Production</button>
+                </h2>
                 <canvas id="myChart"></canvas>
+                <canvas id="myChart1"></canvas>
+                <canvas id="myChart2"></canvas>
             </div>
             <div class="lb dashboard-item">
                 <h2>Leaderboard</h2>
@@ -237,9 +242,9 @@
                 <diV class="leaderboard-carbonProduction">
                     <div style="display: flex; align-items: center;">
                         <h4>Leaderboard</h4>
-                        <i class="fas fa-question-circle"></i>
+                        <i onclick="showButton()" class="fas fa-question-circle"></i>
                     </div>
-                    <!-- <p class="leaderboard-description-paragraph">Here you can see how much C02 does each region produce: -->
+                    <p class="leaderboard-description-paragraph" id="show-info-paragraph">Here you can see how much C02 does each region produce:
                     </p>
                     <hr>
                     <div class="leaderboard-number-container">
@@ -276,9 +281,9 @@
                 <div class="leaderboard-comparison">
                     <div style="display: flex; align-items: center;">
                         <h4>Compare</h4>
-                        <i class="fas fa-question-circle"></i>
+                        <i onclick="showButton()" class="fas fa-question-circle"></i>
                     </div>
-                    <!-- <p class="leaderboard-description-paragraph">Here you can compare your CO2 production with others: -->
+                    <p class="leaderboard-description-paragraph" id="show-info-paragraph">Here you can compare your CO2 production with others:
                     </p>
                     <hr>
                 </div>
@@ -286,9 +291,9 @@
             <div class="leaderboard-map" id="leaderboard-map-container">
                 <div style="display: flex; align-items: center;">
                     <h4>Map</h4>
-                    <i class="fas fa-question-circle"></i>
+                    <i onclick="showButton()" class="fas fa-question-circle"></i>
                 </div>
-                <!-- <p class="leaderboard-description-paragraph">Here you can see which region is the best in sustainability: -->
+                <p class="leaderboard-description-paragraph" id="show-info-paragraph">Here you can see which region is the best in sustainability:
                 </p>
                 <hr>
                 <div>
