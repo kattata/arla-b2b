@@ -225,7 +225,7 @@
 .button-container button {
      width: 30%;
      height: 35px;
-     background-color: #fff;
+     background-color: #ffffff00;
      border: 1px solid black;
      border-radius: 8px;
      outline: none;
@@ -235,6 +235,7 @@
 .button-container button:hover {
      border: 0;
      color: var(--green1);
+     background-color: #fff;
 }
 
 .form p {

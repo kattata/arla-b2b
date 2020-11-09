@@ -33,6 +33,7 @@ body {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    color: var(--gray6);
 }
 
 .topnav-element-left a:hover {
@@ -45,6 +46,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: var(--gray6);
 }
 
 .right-element {
@@ -670,7 +672,7 @@ input[type=range]::-webkit-slider-runnable-thumb {
 }
 
 .news-container {
-    padding: 1.2rem 1.5rem;
+    padding: 0 1.5rem 0 1.5rem;
 }
 
 .news-container h4 {
@@ -687,6 +689,10 @@ input[type=range]::-webkit-slider-runnable-thumb {
     border: none;
     padding-left: 10px;
     text-align: right;
+    float: right;
+font-weight: 600;
+font-size: .8em;
+margin-bottom: 16px;
 }
 
 .news-container button a {
@@ -811,6 +817,16 @@ canvas {
     color: var(--gray2);
 }
 
+.leaderboard-wrapper {
+    display: flex;
+    justify-content: left;
+}
+
+.leaderboard-carbonProduction-dashboard {
+    display: flex;
+    justify-content: left;
+}
+
 .leaderboard-number-container {
     list-style-type: none;
     display: inline-block;
@@ -844,7 +860,6 @@ canvas {
 .leaderboard-carbon-container {
     list-style-type: none;
     display: inline-block;
-    margin-right: 24px;
 }
 
 .leaderboard-carbon-container ul {
@@ -960,6 +975,11 @@ hr {
     text-align: center;
 }
 
+.dropdown i {
+    font-size: .7em;
+    margin-left: 16px;
+}
+
 .dropdown-content {
     display: block;
     position: absolute;
@@ -981,9 +1001,25 @@ hr {
     font-size: 1em;
 }
 
-
 .show {
     opacity: 1;
+}
+
+.farmMenu-content {
+    display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.farmMenu-content a {
+    color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
 }
 
 .fa-sort-down {
@@ -1027,6 +1063,10 @@ hr {
         width: 100%;
     }
 
+    #leaderboard.page {
+        background-color: var(--green1);
+    }
+
     .survey {
         grid-row: 1 / span 3;
         grid-column: 1;
@@ -1059,5 +1099,21 @@ hr {
     .login-container-right {
         width: 100%;
         padding: 20px;
+    }
+
+    .leaderboard-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    .leaderboard-carbonProduction-dashboard {
+        display: flex;
+        justify-content: center;
+    }
+
+    .leaderboard-number-container {
+        list-style-type: none;
+        display: inline-block;
+        margin-left: 0;
     }
 }
