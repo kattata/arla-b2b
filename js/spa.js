@@ -73,9 +73,9 @@ close.addEventListener('click', () => {
     curtain.classList.toggle("active");
 })
 
-const dashboardItemsHeading1 = document.querySelector(".dashboard-item:nth-of-type(1) h2");
-const dashboardItemsHeading2 = document.querySelector(".dashboard-item:nth-of-type(4) h2");
-const dashboardItemsHeading3 = document.querySelector(".dashboard-item:nth-of-type(5) h2");
+const dashboardItemsHeading1 = document.querySelector(".dashboard-item:nth-of-type(1)>h2");
+const dashboardItemsHeading2 = document.querySelector(".dashboard-item:nth-of-type(4)>h2");
+const dashboardItemsHeading3 = document.querySelector(".dashboard-item:nth-of-type(5)>h2");
 
 
 dashboardItemsHeading1.addEventListener("click", ()=>{

@@ -167,13 +167,13 @@
             <div class="news dashboard-item">
                 <h2>Today's news</h2>
                 <div class="news-container">
-                    <div class="news-item">
+                    <div class="news-item" style="font-size: 1.2em;">
                         <img src="img/flower-girl.svg" alt="Girl with flowers illustration">
                         <div>
                             <h4>How do farmers reduce waste?</h4>
                             <div class="news-text">
                                 <p>By separating and drying the manure solids to use as bedding, farmers can reduce
-                                    their farm's waste. So, they know that they helping the environment!</p>
+                                    their farm's waste.<br>So, they know that they helping the environment!</p>
                                 <!-- <button><a href="#">Read more</a></button> -->
                             </div>
                         </div>
@@ -188,19 +188,23 @@
                 </div>
             </div>
             <div class="progress dashboard-item">
-                <h2>My progress <button class="switch" onclick="hideFunction()">CO2
-                        Production</button><button class="switch" onclick="hideFunction1()">Self
-                        Suffiency</button><button class="switch" onclick="hideFunction2()">Milk
-                        Production</button>
-                </h2>
+                <h2>My progress</h2> 
+                <div class="progress-buttons">
+                    <button class="switch" onclick="hideFunction()">CO2
+                    Production</button><button class="switch" onclick="hideFunction1()">Self
+                    Suffiency</button><button class="switch" onclick="hideFunction2()">Milk
+                    Production</button>
+                </div>
+                
                 <canvas id="myChart"></canvas>
                 <canvas id="myChart1"></canvas>
                 <canvas id="myChart2"></canvas>
             </div>
             <div class="lb dashboard-item">
                 <h2>Leaderboard</h2>
- <div class="leaderboard-wrapper">
+            <div class="leaderboard-wrapper">
                 <div class="leaderboard-carbonProduction-dashboard">
+                    <div>
                     <div class="leaderboard-number-container">
                         <p class="leaderboard-title-paragraph">Place</p>
                         <ul>
@@ -222,7 +226,7 @@
                             <li>Central Jutland</li>
                         </ul>
                     </div>
-
+</div>
                     <div class="leaderboard-carbon-container">
                         <p class="leaderboard-title-paragraph">CO2 production in 2019</p>
                         <ul>
@@ -261,11 +265,12 @@
                         <h4>Leaderboard</h4>
                         <i onclick="showButton()" class="fas fa-question-circle"></i>
                     </div>
-                    <p class="leaderboard-description-paragraph" id="show-info-paragraph">Here you can see how much C02
+                    <p class="leaderboard-description-paragraph">Here you can see how much C02
                         does each region produce:
                     </p>
                     <hr>
                     <div class="leaderboard-wrapper">
+                        <div>
                     <div class="leaderboard-number-container">
                         <p class="leaderboard-title-paragraph">Place</p>
                         <ul>
@@ -286,6 +291,7 @@
                             <li>Central Jutland</li>
                         </ul>
                     </div>
+                    </div>
                     <div class="leaderboard-carbon-container">
                         <p class="leaderboard-title-paragraph">CO2 production in 2019</p>
                         <ul>
@@ -303,7 +309,7 @@
                         <h4>Compare</h4>
                         <i onclick="showButton()" class="fas fa-question-circle"></i>
                     </div>
-                    <p class="leaderboard-description-paragraph" id="show-info-paragraph">Here you can compare your CO2
+                    <p class="leaderboard-description-paragraph">Here you can compare your CO2
                         production with others:
                     </p>
                     <hr>
@@ -312,18 +318,12 @@
             <div class="leaderboard-map" id="leaderboard-map-container">
                 <div style="display: flex; align-items: center;">
                     <h4>Map</h4>
-                    <i onclick="showCompareButton()" class="fas fa-question-circle"></i>
+                    <i onclick="showButton()" class="fas fa-question-circle"></i>
                 </div>
                 <p class="leaderboard-description-paragraph" id="show-info-compare">Here you can see which region is the best in sustainability:
                 </p>
                 <hr>
                 <div>
-                    <!-- <p class="click-me">Northern DK</p>
-                    <div class="map-productivity-container">
-                        <p>Northern Denmark</p><br>
-                        <p>Avg. CO2 production: <span style="font-weight: 400;">8702t/year</span></p>
-                        <p>CO2 reduction: <span style="font-weight: 400;">50%</span></p>
-                    </div> -->
                 </div>
                 <img src="./img/country.svg" alt="DK map" class="denamrk-map">
             </div>
