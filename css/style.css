@@ -707,6 +707,7 @@ input[type=range]::-webkit-slider-runnable-thumb {
 .fa-question-circle {
     float: right;
     margin: 16px 0 0 16px;
+    cursor: pointer;
 }
 
 .leaderboard-carbonProduction {
@@ -756,7 +757,10 @@ input[type=range]::-webkit-slider-runnable-thumb {
     font-size: 1em;
     margin: 0;
     padding: 0 0 0 16px;
+    display: none;
+    transition: all 0.3s ease;
 }
+
 
 .leaderboard-carbon-container {
     list-style-type: none;
