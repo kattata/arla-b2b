@@ -345,13 +345,14 @@ body {
         left: -10px;
     }
 
+    
     .nav-hi-container {
         position: absolute;
         width: 170px;
         top: -40px;
         right: 0;
     }
-
+    
     .nav-hi-container p {
         position: absolute;
         top: 10px;
@@ -361,7 +362,19 @@ body {
         text-align: center;
         font-size: 14px;
     }
+    
+    .progress-cow-text {
+        top: ;
+    }
 
+    .leaderboard-cow-text {
+        top: 100px;
+    }
+
+    .leaderboard-cow {
+        width: 70%;
+    }
+    
     .nav-hi-container img {
         width: 100%;
         z-index: 1;
