@@ -30,7 +30,13 @@
         </div>
         
         <div class="topnav-element-right">
-            <p class="right-element" style="margin-right: 24px;"><span style="font-weight: 600;">Farm:</span> 12345</p>
+            <div style="inline-block">
+            <p class="right-element" style="margin-right: 24px;"><span style="font-weight: 600;">Farm:</span> 12345 <i class="fas fa-chevron-down"></i></p>
+            <!-- <div id="farmMenu" class="farmMenu-content">
+                <a href="#">Farm 12346</a>
+                <a href="#">Farm 12347</a>
+            </div> -->
+        </div>
             <p class="right-element"><span style="font-weight: 600;">Casper Doe</span></p>
             <img src="./img/Casper.png" alt="Casper avatar" class="right-element">
         </div>
@@ -179,6 +185,15 @@
                             <!-- <button><a href="#">Read more</a></button> -->
                         </div>
                     </div>
+                    <div class="news-item">
+                        <div>
+                            <h4>Natural animal raising</h4>
+                            <div class="news-text">
+                                <p>Healthy cow = happy cow. Read how to naturaly raise your cows.</p>
+                                <!-- <button><a href="#">Read more</a></button> -->
+                            </div>
+                        </div>
+                    </div>
                     <div class="news-item"></div>
                 </div>
             </div>
@@ -241,7 +256,7 @@
             <!-- Leaderboard main dropdown -->
             <div style="width: 100%; text-align: center;">
                 <div class="dropdown">
-                    <button onclick="toggleDropdown()" class="dropbtn">Denmark</button>
+                    <button onclick="toggleDropdown()" class="dropbtn">Denmark <i class="fas fa-chevron-down"></i></button>
                     <div id="myDropdown" class="dropdown-content">
                         <a href="#">Scandinavia</a>
                         <a href="#">Europe</a>
@@ -337,8 +352,8 @@
                 your data four times per year to document the great things being done. It helps us increase trust and
                 transparency - all the way from cow to consumer.
             </p>
-            <p>
-                The information is taken from the last quarter survey. Please, check the data and update it if anything
+            <p style="font-weight: 600;">
+                The information is taken from the last quarter survey.<br>Please, check the data and update it if anything
                 has changed.
             </p>
             <button>START THE SURVEY</button>

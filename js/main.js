@@ -330,6 +330,25 @@ window.onclick = function (event) {
     }
 }
 
+//Farm Dropdown
+
+// function farmDropdown() {
+//     document.getElementById("farmMenu").classList.toggle("show");
+// }
+
+// window.onclick = function (event) {
+//     if (!event.target.matches('.right-element')) {
+//         let dropdowns = document.getElementsByClassName("farmMenu-content");
+//         let i;
+//         for (i = 0; i < dropdowns.length; i++) {
+//             let openDropdown = dropdowns[i];
+//             if (openDropdown.classList.contains('show')) {
+//                 openDropdown.classList.remove('show');
+//             }
+//         }
+//     }
+// }
+
 
 function showButton() {
     let x = document.getElementById("show-info-paragraph");
@@ -343,8 +362,6 @@ function showButton() {
         surveyDone.style.display = "flex"
     }
 };
-
-
 
 
 function hideFunction() {
