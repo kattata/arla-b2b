@@ -144,10 +144,10 @@ let surveyElectricity = document.querySelector('.survey-electricity');
 
 // add data to firebase
 nextBtn.addEventListener('click', function () {
-    if (surveyDiesel.value.length > 0) {
+    if (surveyCows.value.length > 0) {
         createNewDoc();
     }
-})
+});
 
 // create new document in firebase
 function createNewDoc() {
