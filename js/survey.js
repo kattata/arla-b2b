@@ -83,7 +83,7 @@ const progressText = document.querySelector(".survey-progressbar p");
 surveyDoneBtn.addEventListener('click', () => {
     survey.classList.remove('active');
     surveyDone.style.display = "none";
-     progressBar.style.width = `${Math.round(currentStep * 100 / 3)}%`;
+    progressBar.style.width = `${Math.round(currentStep * 100 / 3)}%`;
     progressText.innerHTML = `Completed ${Math.round(currentStep * 100 / 3)}%`;
     currentStep = 1;
     questionIterator = 0;
@@ -92,7 +92,7 @@ surveyDoneBtn.addEventListener('click', () => {
     questions[2].classList.remove('completed');
     bullets[1].classList.remove('completed');
     bullets[2].classList.remove('completed');
-    
+
 })
 navigation[1].addEventListener("click", () => {
     surveyForm.style.display = "flex";
@@ -132,4 +132,3 @@ console.log('Days left: ' + surveyDeadline);
 const surveyDashboardDays = document.querySelector(".text-wrapper-survey p:nth-of-type(2)");
 
 surveyDashboardDays.innerHTML = `${surveyDeadline} DAYS LEFT`;
-
