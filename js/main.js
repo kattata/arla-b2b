@@ -155,12 +155,34 @@ function displayCalculation(result) {
     document.querySelector('.result-number').innerHTML = `${result}€`;
 }
 
+// ========== CHARTS ========== //
 
 // make self suffiency and milk production charts initially display: none
 document.getElementById("myChart1").style.display = "none";
 document.getElementById("myChart2").style.display = "none";
 
-// ========== GLOBAL VARIABLES ========== //
+// gradient background colors for charts
+
+var ctx = document.getElementById("myChart").getContext("2d");
+var gradient = ctx.createLinearGradient(0, 0, 0, 400);
+gradient.addColorStop(0, 'rgba(59,68,67,1)');
+gradient.addColorStop(1, 'rgba(59,68,67,0)');
+// var ctx = document.getElementById("myChart").getContext("2d");
+// var gradient = ctx.createLinearGradient(0, 0, 0, 400);
+// gradient.addColorStop(0, 'rgba(233,228,227,1)');
+// gradient.addColorStop(1, 'rgba(233,228,227,0)');
+
+var ctx1 = document.getElementById("myChart1").getContext("2d");
+var gradient1 = ctx1.createLinearGradient(0, 0, 0, 400);
+gradient1.addColorStop(0, 'rgba(255,208,0,1)');
+gradient1.addColorStop(1, 'rgba(255,208,0,0)');
+
+var ctx2 = document.getElementById("myChart2").getContext("2d");
+var gradient2 = ctx2.createLinearGradient(0, 0, 0, 400);
+gradient2.addColorStop(0, 'rgba(212,233,249,1)');
+gradient2.addColorStop(1, 'rgba(212,233,249,0)');
+
+// GLOBAL VARIABLES
 const _dataRef = _db.collection("sustainabilityData");
 let _sustainabilityData;
 
@@ -207,14 +229,15 @@ function appendCarbonFootprint(sustainabilityData) {
         data: {
             datasets: [{
                 data: data.footprint,
-                label: 'CO2 Production',
+                label: 'CO2 Production (tons)',
                 fill: true,
-                borderColor: "#e755ba",
+                borderColor: "#3a4443",
                 backgroundColor: gradient,
-                pointBackgroundColor: "#55bae7",
-                pointBorderColor: "#55bae7",
-                pointHoverBackgroundColor: "#55bae7",
-                pointHoverBorderColor: "#55bae7",
+                pointBackgroundColor: "#3a4443",
+                pointBorderColor: "#3a4443",
+                pointHoverBackgroundColor: "#3a4443",
+                pointHoverBorderColor: "#3a4443",
+                borderWidth: "1",
             }],
             labels: data.years
         }
@@ -249,14 +272,15 @@ function appendSelfSuffiency(sustainabilityData) {
         data: {
             datasets: [{
                 data: data.self,
-                label: 'Self Suffiency in Feed',
+                label: 'Self Suffiency in Feed (%)',
                 fill: true,
-                borderColor: "#e755ba",
-                backgroundColor: gradient,
-                pointBackgroundColor: "#55bae7",
-                pointBorderColor: "#55bae7",
-                pointHoverBackgroundColor: "#55bae7",
-                pointHoverBorderColor: "#55bae7",
+                borderColor: "#ffd000",
+                backgroundColor: gradient1,
+                pointBackgroundColor: "#ffd000",
+                pointBorderColor: "#ffd000",
+                pointHoverBackgroundColor: "#ffd000",
+                pointHoverBorderColor: "#ffd000",
+                borderWidth: "1",
             }],
             labels: data.years
         }
@@ -291,14 +315,15 @@ function appendMilkProduction(sustainabilityData) {
         data: {
             datasets: [{
                 data: data.mp,
-                label: "Milk Production",
+                label: "Milk Production (kgs)",
                 fill: true,
-                borderColor: "#e755ba",
-                backgroundColor: gradient,
-                pointBackgroundColor: "#55bae7",
-                pointBorderColor: "#55bae7",
-                pointHoverBackgroundColor: "#55bae7",
-                pointHoverBorderColor: "#55bae7",
+                borderColor: "#d3e8f9",
+                backgroundColor: gradient2,
+                pointBackgroundColor: "#d3e8f9",
+                pointBorderColor: "#d3e8f9",
+                pointHoverBackgroundColor: "#d3e8f9",
+                pointHoverBorderColor: "#d3e8f9",
+                borderWidth: "1",
             }],
             labels: data.years,
         }
