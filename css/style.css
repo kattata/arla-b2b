@@ -223,6 +223,7 @@ body {
 @media only screen and (min-width: 600px) {
     .topnav {
         height: 7vh;
+        margin-bottom: 15px;
     }
 
     .topnav>i {
@@ -238,13 +239,14 @@ body {
         width: 17%;
         min-width: 250px;
         background-color: #fff;
-        height: 95%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
         border-bottom-right-radius: 8px;
         border-top-right-radius: 8px;
+        height: 87vh;
+        margin-right: 15px;
     }
 
     .page>nav a {
@@ -356,12 +358,14 @@ body {
     height: 93vh;
     width: 100vw;
     animation: fadeIn 0.4s;
+    height: fit-content;
+    /* margin: 15px 0; */
 }
 
 #home {
     position: relative;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     width: 100%;
 }
@@ -534,7 +538,7 @@ body {
     border-bottom-left-radius: 8px;
     border-top-left-radius: 8px;
     background-color: #fff;
-    margin-left: 15px;
+    /* margin-left: 15px; */
 }
 
 /* ---------- dashboard items ---------- */
@@ -709,13 +713,21 @@ input[type=range]::-webkit-slider-runnable-thumb {
     white-space: nowrap;
 }
 
+.news-item {
+    padding-bottom: 3px;
+}
+
 .news-item:first-child {
     display: flex;
     gap: 15px;
     position: relative;
 }
 
-.news-item:first-child::after {
+.news-item:nth-child(2) {
+    position: relative;
+}
+
+.news-item:first-child::after, .news-item:nth-child(2)::after {
     content: "";
     height: 1px;
     width: 100%;
@@ -762,7 +774,7 @@ input[type=range]::-webkit-slider-runnable-thumb {
 canvas {
     position: relative;
     margin: 0 auto;
-    max-width: 70%;
+    max-width: 75%;
     /* max-width: 450px;
     margin: 0 auto;
     display: block; */
