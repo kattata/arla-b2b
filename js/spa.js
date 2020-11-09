@@ -58,13 +58,6 @@ function makeHomeActive() {
 }
 makeHomeActive();
 
-//logo leads to dashboard
-logo.addEventListener('click', () => {
-    hidePages()
-    hideTabs();
-    navigation[0].classList.add("active")
-    dashboard.style.display = 'grid';
-})
 
 const burger = document.querySelector('.fa-bars');
 const curtain = document.querySelector('.curtain');
@@ -119,4 +112,13 @@ navMobileElements[3].addEventListener('click', ()=>{
     dashboard.style.display = 'none';
     navigation[3].classList.add("active")
     curtain.classList.toggle("active");
+})
+
+
+//logo leads to dashboard
+logo.addEventListener('click', () => {
+    hidePages()
+    hideTabs();
+    navigation[0].classList.add("active")
+    dashboard.style.display = 'grid';
 })
