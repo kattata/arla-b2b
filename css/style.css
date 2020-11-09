@@ -750,16 +750,7 @@ input[type=range]::-webkit-slider-runnable-thumb {
     position: relative;
 }
 
-<<<<<<< HEAD
-.news-item:nth-child(2) {
-    position: relative;
-}
-
-.news-item:first-child::after,
-.news-item:nth-child(2)::after {
-=======
 .news-item:first-child::after {
->>>>>>> a0b9dfe8d90bf8114205816b1e327aadae0ecf06
     content: "";
     height: 1px;
     width: 100%;
