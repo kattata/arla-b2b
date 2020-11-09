@@ -917,7 +917,6 @@ hr {
     border-radius: 12px;
     line-height: 1.6;
     float: right;
-    line-height: 1.6;
 }
 
 .denamrk-map {
@@ -1042,6 +1041,8 @@ hr {
     .topnav-element-right {
         display: none;
     }
+
+    
 }
 
 /* ---------- mobile and tablet ---------- */
@@ -1121,4 +1122,5 @@ hr {
         display: inline-block;
         margin-left: 0;
     }
+
 }
