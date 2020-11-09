@@ -1,4 +1,5 @@
 
+
 const navigation = document.querySelectorAll("nav ul li");
 let pages = document.querySelectorAll("#home .page");
 let survey = document.querySelector("#survey");
@@ -72,6 +73,33 @@ close.addEventListener('click', () => {
     curtain.classList.toggle("active");
 })
 
+const dashboardItemsHeading1 = document.querySelector(".dashboard-item:nth-of-type(1) h2");
+const dashboardItemsHeading2 = document.querySelector(".dashboard-item:nth-of-type(4) h2");
+const dashboardItemsHeading3 = document.querySelector(".dashboard-item:nth-of-type(5) h2");
+
+
+dashboardItemsHeading1.addEventListener("click", ()=>{
+     hideTabs();
+    hidePages()
+    survey.classList.add("active");
+    navigation[0].classList.add("active");
+    dashboard.style.display = 'grid';
+})
+dashboardItemsHeading2.addEventListener("click", ()=>{
+   hidePages();
+    hideTabs();
+    pages[0].style.display = 'block';
+    dashboard.style.display = 'none';
+    navigation[2].classList.add("active")
+})
+dashboardItemsHeading3.addEventListener("click", ()=>{
+   hidePages();
+    hideTabs();
+    pages[1].style.display = 'block';
+    dashboard.style.display = 'none';
+    navigation[3].classList.add("active")
+})
+
 // spa mobile code
 
 const navMobileElements = document.querySelectorAll(".curtain ul li");
@@ -123,3 +151,4 @@ logo.addEventListener('click', () => {
     navigation[0].classList.add("active")
     dashboard.style.display = 'grid';
 })
+

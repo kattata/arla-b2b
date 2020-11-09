@@ -216,6 +216,10 @@ body {
     display: none;
 }
 
+.dashboard-item h2 {
+    cursor: pointer;
+}
+
 @media only screen and (min-width: 600px) {
     .topnav {
         height: 7vh;
@@ -694,9 +698,9 @@ input[type=range]::-webkit-slider-runnable-thumb {
     padding-left: 10px;
     text-align: right;
     float: right;
-font-weight: 600;
-font-size: .8em;
-margin-bottom: 16px;
+    font-weight: 600;
+    font-size: .8em;
+    margin-bottom: 16px;
 }
 
 .news-container button a {
@@ -1013,19 +1017,19 @@ hr {
 
 .farmMenu-content {
     display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  overflow: auto;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
 }
 
 .farmMenu-content a {
     color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
 }
 
 .fa-sort-down {
@@ -1044,7 +1048,7 @@ hr {
         display: none;
     }
 
-    
+
 }
 
 /* ---------- mobile and tablet ---------- */
@@ -1066,6 +1070,8 @@ hr {
         margin: 10px;
         width: auto;
     }
+
+
 
     #home .page {
         width: 100%;
