@@ -357,11 +357,20 @@ function showButton() {
     } else {
         x.style.display = "none";
     }
-    if (questionIterator == 3) {
-        surveyForm.style.display = "none"
-        surveyDone.style.display = "flex"
-    }
+    // if (questionIterator == 3) {
+    //     surveyForm.style.display = "none"
+    //     surveyDone.style.display = "flex"
+    // }
 };
+
+// function showCompareButton() {
+//     let x = document.getElementById("show-info-compare");
+//     if (x.style.display === "none") {
+//         x.style.display = "block";
+//     } else {
+//         x.style.display = "none";
+//     }
+// };
 
 
 function hideFunction() {

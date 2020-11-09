@@ -49,6 +49,10 @@ body {
     color: var(--gray6);
 }
 
+.topnav-element-right p {
+    cursor: pointer;
+}
+
 .right-element {
     display: block;
     padding: 14px 8px;
@@ -860,6 +864,7 @@ canvas {
 .leaderboard-carbon-container {
     list-style-type: none;
     display: inline-block;
+    float: right;
 }
 
 .leaderboard-carbon-container ul {
