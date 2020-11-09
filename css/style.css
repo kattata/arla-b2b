@@ -240,9 +240,48 @@ canvas {
     .page>nav ul li.active p {
         color: var(--gray1);
     }
-}
 
-/* @media (min-width: ) */
+    /* COW IN NAV */
+    .nav-cow {
+        width: 220px;
+        margin: 20px 0;
+        margin-bottom: 60px;
+        height: 220px;
+        background-color: var(--green1);
+        border-radius: 50%;
+        position: relative;
+    }
+
+    .nav-cow-img {
+        width: 80%;
+        position: absolute;
+        bottom: -50px;
+        left: -10px;
+    }
+
+    .nav-hi-container {
+        position: absolute;
+        width: 170px;
+        top: -40px;
+        right: 0;
+    }
+
+    .nav-hi-container p{
+        position: absolute;
+        top: 10px;
+        left: 30px;
+        z-index: 80;
+        width: 120px;
+        text-align: center;
+        font-size: 14px;
+    }
+    
+    .nav-hi-container img {
+        width: 100%;
+        z-index: 70;
+    }
+
+}
 
 
 /* ---------- login page logo ---------- */
@@ -362,7 +401,6 @@ canvas {
 }
 
 .hi-container p {
-    content: "Hi, there! Nice to see you again";
     position: absolute;
     top: 30px;
     left: 45px;
@@ -384,7 +422,7 @@ canvas {
    padding: 50px;
 }
 
-.login-container-right img{
+#loginlogo {
     width: 125px;
     margin-bottom: 10px;
 }
@@ -411,6 +449,7 @@ canvas {
     font-family: Arla interface;
     margin-top: 10px;
 }
+
 
 .firebaseui-title {
     text-align: center;
