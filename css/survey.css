@@ -177,6 +177,7 @@
      font-weight: 100;
      margin: 1vh 0;
      font-family: Arla inertface;
+     font-weight: 600;
 }
 
 .questions label {
@@ -207,9 +208,9 @@
 
 .questions>div i {
      position: absolute;
-     left: 105%;
-     top: 50%;
-     transform: translateY(-50%);
+     /* left: 105%; */
+     /* top: 50%; */
+     transform: translateY(-10%);
 }
 
 .button-container {
@@ -223,6 +224,7 @@
      height: 35px;
      background-color: #fff;
      border: 1px solid black;
+     border-radius: 8px;
      outline: none;
      transition: all .3s ease;
 }
@@ -278,6 +280,7 @@
      align-self: center;
      margin-top: 5vh;
      cursor: pointer;
+     border-radius: 8px;
 }
 
 .great-success img {
@@ -341,6 +344,9 @@
      margin: 10px;
      font-family: Arla inertface;
      padding: 0;
+     display: flex;
+     justify-content: center;
+     flex-wrap: wrap;
 }
 
 .text-wrapper-survey {
@@ -352,14 +358,15 @@
 .text-wrapper-survey p {
      padding: 0;
      margin: 0;
-     font-size: 18px;
+     font-size: 16px;
      font-weight: 300;
      text-align: center;
 }
 
 .text-wrapper-survey p:nth-of-type(2) {
-     font-size: 36px;
+     font-size: 25px;
      margin: 10px 0;
+     font-weight: 600;
 }
 
 .survey-progressbar {
@@ -369,26 +376,31 @@
      align-items: center;
      margin: 0 10px;
      border-radius: 8px;
-     height: 50px;
+     height: 40px;
      position: relative;
      overflow: hidden;
-     border: 1px solid rgb(211, 211, 211);
-     box-shadow: -1px 2px 2px 0px rgba(0, 0, 0, 0.1);
+     border: 1px solid var(--gray5);
 }
 
 .survey-progressbar .fill {
      position: absolute;
      left: 0;
      top: 0;
-     width: calc(100% / 3);
+     width: 0;
      height: 100%;
      background-color: var(--green1);
-     transition: all .3s ease;
+     transition: all .3s .4s ease;
 }
 
 .survey-progressbar p {
+     position: absolute;
      font-weight: 600;
      font-size: 18px;
+     position: absolute;
+     top: -7px;
+     left: 50%;
+     transform: translateX(-50%);
+     white-space: nowrap;
 }
 
 @media only screen and (min-width:600px) {
@@ -451,16 +463,16 @@
      }
 
      .progress-container .steps.completed:after {
-          width: 350%;
+          width: 300%;
      }
 
      .questions {
           width: 25%;
-          height: 30vh;
+          height: 32vh;
      }
 
      .questions label {
-          font-size: 22px;
+          font-size: 18px;
      }
 
      .questions .category>div {
@@ -473,6 +485,7 @@
 
      .button-container {
           width: 25%;
+          margin-top: 2vh;
      }
 
      .button-container button {
@@ -525,21 +538,27 @@
           font-size: 18px;
      }
 
-     .survey-container {
-          height: 85%;
-     }
-
-
-     .text-wrapper-survey p {
-          font-size: 24px;
-     }
-
-     .text-wrapper-survey p:nth-of-type(2) {
-          font-size: 48px;
-     }
-
      .survey-progressbar {
-          height: 60px;
-          margin-top: 65px;
+          height: 40px;
+          margin-top: 15px;
+     }
+
+     .survey-progressbar p {
+          font-size: 16px;
+     }
+
+}
+
+@media only screen and (min-width:16000px) {
+     .button-container {
+          margin-top: 0;
+     }
+
+     .questions label {
+          font-size: 22px;
+     }
+
+     .progress-container .steps.completed:after {
+          width: 350%;
      }
 }

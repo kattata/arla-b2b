@@ -49,8 +49,10 @@ const navigation = document.querySelectorAll("nav ul li");
 let pages = document.querySelectorAll("#home .page");
 let survey = document.querySelector("#survey");
 let dashboard = document.querySelector(".dashboard");
-console.log(pages)
-console.log(survey)
+let login = document.querySelector('#login');
+
+// show login page first
+login.style.display = "flex";
 
 function hidePages() {
     for (let page of pages) {
@@ -101,3 +103,5 @@ function makeHomeActive() {
     navigation[0].classList.add("active");
 }
 makeHomeActive();
+
+

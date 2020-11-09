@@ -23,6 +23,8 @@
     <!-- home page -->
     <div class="topnav">
         <a href="index.html"><img src="img/arlalogo.png" alt="Arla Logo"></a>
+        <a class="active-topnav-element" href="#" style="margin-left: 64px;">DASHBOARD</a>
+        <a href="#" style="margin-left: 64px;">NEWS</a>
         <i class="fas fa-bars"></i>
         <div class="curtain">
             <i class="fas fa-times"></i>
@@ -70,6 +72,14 @@
     <section id="home" class="page">
         <!-- DESKTOP NAV -->
         <nav>
+            <div class="nav-cow">
+                <img src="img/cow-login.png" alt="Smiling cow" class="nav-cow-img">
+                <div class="nav-hi-container">
+                    <img src="img/bubble.svg" alt="Talk bubble" class="login-bubble">
+                    <p>Hello, Casper! It's 10°C 
+                        today and cloudy, so don't forget your jacket.</p>
+                </div>
+            </div>
             <ul>
 
                 <li>
@@ -110,7 +120,7 @@
                     </div>
                     <div class="survey-progressbar">
                         <div class="fill"></div>
-                        <p>Continue (33%)</p>
+                        <p>Completed 0%</p>
                     </div>
                 </div>
             </div>
@@ -230,8 +240,11 @@
 
             <div style="float: left;">
                 <diV class="leaderboard-carbonProduction">
-                    <h4>Leaderboard</h4>
-                    <p class="leaderboard-description-paragraph">Here you can see how much C02 does each region produce
+                    <div style="display: flex; align-items: center;">
+                        <h4>Leaderboard</h4>
+                        <i onclick="showButton()" class="fas fa-question-circle"></i>
+                    </div>
+                    <p class="leaderboard-description-paragraph" id="show-info-paragraph">Here you can see how much C02 does each region produce:
                     </p>
                     <hr>
                     <div class="leaderboard-number-container">
@@ -266,19 +279,32 @@
                     </div>
                 </diV>
                 <div class="leaderboard-comparison">
-                    <h4>Compare</h4>
-                    <p class="leaderboard-description-paragraph">Here you can compare your CO2 production with others
+                    <div style="display: flex; align-items: center;">
+                        <h4>Compare</h4>
+                        <i onclick="showButton()" class="fas fa-question-circle"></i>
+                    </div>
+                    <p class="leaderboard-description-paragraph" id="show-info-paragraph">Here you can compare your CO2 production with others:
                     </p>
                     <hr>
                 </div>
             </div>
             <div class="leaderboard-map" id="leaderboard-map-container">
-                <h4>Map</h4>
-                <p class="leaderboard-description-paragraph">Here you can see which region is the best in sustainability
+                <div style="display: flex; align-items: center;">
+                    <h4>Map</h4>
+                    <i onclick="showButton()" class="fas fa-question-circle"></i>
+                </div>
+                <p class="leaderboard-description-paragraph" id="show-info-paragraph">Here you can see which region is the best in sustainability:
                 </p>
                 <hr>
-                <div class="map-productivity-container"></div>
-                <img src="./img/country.svg" alt="DK map" class="denamrk-map">
+                <div>
+                    <p class="click-me">Northern DK</p>
+                    <div class="map-productivity-container">
+                        <p>Northern Denmark</p><br>
+                        <p>Avg. CO2 production: <span style="font-weight: 400;">8702t/year</span></p>
+                        <p>CO2 reduction: <span style="font-weight: 400;">50%</span></p>
+                    </div>
+                </div>
+                    <img src="./img/country.svg" alt="DK map" class="denamrk-map">
             </div>
 
         </section>
@@ -384,12 +410,29 @@
 
     <!-- login page -->
     <section id="login" class="page">
-        <div class="logocontainer">
-            <img id="loginlogo" src="./img/arlalogo.png" alt="">
+        <div class="login-container-left">
+            <img src="img/login.jpg" alt="Field Image" class="hero-img">
+            <div class="hero">
+                <h2>Help us reduce the ecological impact of farming</h2>
+                <h2>by providing us with your farm's statistics every quarter</h2>
+            </div>
+            <div class="login-cow-container">
+                <img src="img/cow-login.png" alt="Cow welcome" class="login-cow"> 
+                <div class="hi-container">
+                    <img src="img/bubble.svg" alt="Talk bubble" class="login-bubble">
+                    <p>Hi, there! Nice to see you again</p>
+                </div>
+            </div>
+        </div>
+        <div class="login-container-right">
+            <img id="loginlogo" src="img/arlalogo.png" alt="">
+            <h2 class="welcome">Welcome to Arlagarden Plus</h2>
+            <div id="firebaseui-auth-container"></div>
         </div>
         <!-- firebase auth container  -->
-        <section id="firebaseui-auth-container"></section>
+        </div>
     </section>
+
     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
     <!-- Add Firebase products that you want to use -->
@@ -400,6 +443,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <!-- spa js file -->
     <script src="./js/spa.js"></script>
+    <!-- survey code file -->
+    <script src="./js/survey.js"></script>
     <!-- main js file -->
     <script src="./js/main.js"></script>
 </body>

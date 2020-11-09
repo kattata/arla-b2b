@@ -41,52 +41,29 @@ function appendDatatoPlaceholder(susData) {
     }
 }
 // ========== FIREBASE AUTH ========== //
-// Listen on authentication state change
-firebase.auth().onAuthStateChanged(function (user) {
-    if (user) { // if user exists and is authenticated
-        userAuthenticated(user);
-    } else { // if user is not logged in
-        userNotAuthenticated();
-    }
-});
+let ui = new firebaseui.auth.AuthUI(firebase.auth());
 
-function userAuthenticated(user) {
-    appendUserData(user);
-    hideTabbar(false);
-    showLoader(false);
+var uiConfig = {
+    callbacks: {
+        signInSuccessWithAuthResult: function (authResult, redirectUrl) {
+            hideLogin();
+            return false;
+        }
+    },
+    signInFlow: 'popup',
+    signInSuccessUrl: '#home',
+    signInOptions: [
+        firebase.auth.EmailAuthProvider.PROVIDER_ID,
+        firebase.auth.PhoneAuthProvider.PROVIDER_ID
+    ]
+};
+
+ui.start('#firebaseui-auth-container', uiConfig);
+
+function hideLogin() {
+    let loginPage = document.querySelector('#login');
+    loginPage.style.display = "none";
 }
-
-function userNotAuthenticated() {
-    hideTabbar(true);
-    showPage("login");
-
-    // Firebase UI configuration
-    const uiConfig = {
-        credentialHelper: firebaseui.auth.CredentialHelper.NONE,
-        signInOptions: [
-            firebase.auth.EmailAuthProvider.PROVIDER_ID,
-            firebase.auth.PhoneAuthProvider.PROVIDER_ID
-        ],
-        signInSuccessUrl: '#home'
-    };
-    // Init Firebase UI Authentication
-    if (!_firebaseUI) {
-        _firebaseUI = new firebaseui.auth.AuthUI(firebase.auth());
-    }
-    _firebaseUI.start('#firebaseui-auth-container', uiConfig);
-    showLoader(false);
-}
-
-// show and hide tabbar
-function hideTabbar(hide) {
-    let tabbar = document.querySelector('#tabbar');
-    if (hide) {
-        tabbar.classList.add("hide");
-    } else {
-        tabbar.classList.remove("hide");
-    }
-}
-
 
 // sign out user
 function logout() {
@@ -342,56 +319,20 @@ window.onclick = function (event) {
         }
     }
 }
-//progress bar code
-
-const previousBtn = document.querySelector(".button-container button:nth-of-type(1)");
-const nextBtn = document.querySelector(".button-container button:nth-of-type(2)");
-const bullets = document.querySelectorAll(".progress-container .steps");
-const questions = document.querySelectorAll(".questions .category");
-
-//survey done letiables
-const surveyDone = document.querySelector("#survey .great-success");
-const surveyDoneBtn = document.querySelector(".great-success button");
-const surveyForm = document.querySelector("#survey .form");
 
 
-const MAX_STEPS = 3;
-let currentStep = 1;
-let questionIterator = 0;
-previousBtn.disabled = true;
-nextBtn.addEventListener('click', () => {
-    bullets[currentStep].classList.add('completed');
-    currentStep += 1;
-    previousBtn.disabled = false;
-    if (currentStep === MAX_STEPS) {
-        nextBtn.innerHTML = "FINISH"
-    }
-    if (currentStep === MAX_STEPS + 1) {
-        previousBtn.disabled = true;
-
-    }
-
-
-});
-nextBtn.addEventListener('click', () => {
-
-    questionIterator++;
-    if (questionIterator == 1) {
-        questions[1].classList.add('completed');
-        questions[0].classList.remove('completed');
-        questions[2].classList.remove('completed');
-    }
-    if (questionIterator == 2) {
-        questions[2].classList.add('completed');
-        questions[1].classList.remove('completed');
-        questions[0].classList.remove('completed');
-
+function showButton() {
+    let x = document.getElementById("show-info-paragraph");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
     }
     if (questionIterator == 3) {
         surveyForm.style.display = "none"
         surveyDone.style.display = "flex"
     }
-});
+};
 previousBtn.addEventListener('click', () => {
     questions[questionIterator].classList.remove('completed');
     questionIterator--;
