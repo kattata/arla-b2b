@@ -12,6 +12,7 @@ body {
 canvas {
     max-width: 450px;
     margin: 0 auto;
+    display: block;
 }
 
 /* ---------- top nav ---------- */
