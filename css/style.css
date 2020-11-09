@@ -808,7 +808,7 @@ canvas {
     background-color: white;
     width: calc(324px + (624 - 324) * ((100vw - 300px) / (1600 - 300)));
     /* width: 624px; */
-    height: calc(348px + (292 - 348) * ((100vw - 300px) / (1600 - 300)));
+    height: calc(348px + (284 - 348) * ((100vw - 300px) / (1600 - 300)));
     /* height: 284px; */
     margin: 0 0 0 24px;
     box-shadow: 3px 6px 28px 0px rgba(0, 0, 0, 0.04);
@@ -904,9 +904,9 @@ hr {
     background-color: white;
     width: calc(324px + (624 - 324) * ((100vw - 300px) / (1600 - 300)));
     /* width: 624px; */
-    height: calc(348px + (292 - 348) * ((100vw - 300px) / (1600 - 300)));
+    height: calc(348px + (284 - 348) * ((100vw - 300px) / (1600 - 300)));
     /* height: 284px; */
-    margin: 32px 0 24px 24px;
+    margin: 24px 0 24px 24px;
     box-shadow: 3px 6px 28px 0px rgba(0, 0, 0, 0.04);
     border-radius: 12px;
     line-height: 1.6;
@@ -918,7 +918,7 @@ hr {
     /* width: 592px;
     height: 600px; */
     width: calc(324px + (592 - 324) * ((100vw - 300px) / (1600 - 300)));
-    height: calc(300px + (616 - 300) * ((100vw - 300px) / (1600 - 300)));
+    height: calc(300px + (592 - 300) * ((100vw - 300px) / (1600 - 300)));
     margin: 0 24px 24px 0;
     box-shadow: 3px 6px 28px 0px rgba(0, 0, 0, 0.04);
     border-radius: 12px;
@@ -934,38 +934,6 @@ hr {
     justify-content: center;
     position: relative;
 }
-
-/* .map-productivity-container {
-    width: 224px;
-    height: 124px;
-    background-color: #fff;
-    box-shadow: 3px 6px 28px 0px rgba(0, 0, 0, 0.04);
-    border-radius: 12px;
-    right: 2%;
-    margin-top: 16px;
-    position: absolute;
-    padding: 16px;
-    margin-right: 16px;
-    display: none;
-}
-
-.map-productivity-container>p {
-    font-size: .8em;
-    line-height: 1;
-    font-weight: 600;
-}
-
-.click-me {
-    top: 35%;
-    right: 25%;
-    position: absolute;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-.click-me:hover+.map-productivity-container {
-    display: block;
-} */
 
 /*-------Main dropdown---------*/
 .dropbtn {
