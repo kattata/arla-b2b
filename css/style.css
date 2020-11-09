@@ -10,9 +10,12 @@ body {
 }
 
 canvas {
-    max-width: 450px;
+    position: relative;
     margin: 0 auto;
-    display: block;
+    max-width: 70%;
+    /* max-width: 450px;
+    margin: 0 auto;
+    display: block; */
 }
 
 /* ---------- top nav ---------- */
@@ -378,7 +381,7 @@ canvas {
     background-color: white;
     width: 100vw;
     height: 100vh;
-    z-index: 100;
+    z-index: -1;
     position: fixed;
     top: 0;
     left: 0;
