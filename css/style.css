@@ -149,8 +149,10 @@ canvas {
 
 .curtain ul li {
     display: flex;
+    padding: 2px 0;
     margin: 20px 0;
 }
+
 
 .curtain ul li i {
     margin: 0;
@@ -857,7 +859,6 @@ hr {
     top: 35%;
     right: 25%;
     position: absolute;
-    z-index: 100;
     font-weight: 600;
     cursor: pointer;
 }
