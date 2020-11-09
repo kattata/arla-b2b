@@ -102,6 +102,9 @@ function changeCow(src) {
     navCow.src = `img/${src}-cow.png`;
 }
 
+
+
+
 // Calculator - range input
 let rangeInput = document.querySelector('#calculator-range');
 let rangeOutput = document.querySelector('.calculator-range-output');
@@ -172,7 +175,7 @@ _dataRef.orderBy("year").onSnapshot(snapshotData => {
         _sustainabilityData.push(data); // push the data object to the global array _sustainabilityData
     });
     console.log(_sustainabilityData);
-    appendSelfSuffiency(_sustainabilityData); // call appendCows with _sustainabilityData as function argument
+    appendSelfSuffiency(_sustainabilityData); // call appendSelfSuffiency with _sustainabilityData as function argument
     appendCarbonFootprint(_sustainabilityData); //call appendCarbonFootprint with _sustainabilityData as function argument
     appendMilkProduction(_sustainabilityData); //call appendMilkProduction with _sustainabilityData as function argument
 });
@@ -328,6 +331,25 @@ window.onclick = function (event) {
     }
 }
 
+//Farm Dropdown
+
+// function farmDropdown() {
+//     document.getElementById("farmMenu").classList.toggle("show");
+// }
+
+// window.onclick = function (event) {
+//     if (!event.target.matches('.right-element')) {
+//         let dropdowns = document.getElementsByClassName("farmMenu-content");
+//         let i;
+//         for (i = 0; i < dropdowns.length; i++) {
+//             let openDropdown = dropdowns[i];
+//             if (openDropdown.classList.contains('show')) {
+//                 openDropdown.classList.remove('show');
+//             }
+//         }
+//     }
+// }
+
 
 function showButton() {
     let x = document.getElementById("show-info-paragraph");
@@ -336,13 +358,20 @@ function showButton() {
     } else {
         x.style.display = "none";
     }
-    if (questionIterator == 3) {
-        surveyForm.style.display = "none"
-        surveyDone.style.display = "flex"
-    }
+    // if (questionIterator == 3) {
+    //     surveyForm.style.display = "none"
+    //     surveyDone.style.display = "flex"
+    // }
 };
 
-
+// function showCompareButton() {
+//     let x = document.getElementById("show-info-compare");
+//     if (x.style.display === "none") {
+//         x.style.display = "block";
+//     } else {
+//         x.style.display = "none";
+//     }
+// };
 
 
 function hideFunction() {
