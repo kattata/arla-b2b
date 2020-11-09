@@ -256,6 +256,47 @@ function appendCarbonFootprint(sustainabilityData) {
     });
 }
 
+// 2: preparing the data
+function prepareCarbonData1(sustainabilityData) {
+    let footprint1 = [];
+    let years = [];
+    sustainabilityData.forEach(data => {
+        if (data.region === 'south') { // in this case we only want the data from 'north'
+            footprint1.push(data.carbonFootprintWholeFarm);
+            years.push(data.year);
+        }
+    });
+    return {
+        footprint1,
+        years
+    }
+}
+//3: appending the chart
+function appendCarbonFootprint1(sustainabilityData) {
+    let data = prepareCarbonData1(sustainabilityData);
+    console.log(data);
+    // generate chart
+    let chartContainer1 = document.querySelector('#myChart');
+    let chart = new Chart(chartContainer1, {
+        type: 'line',
+        data: {
+            datasets: [{
+                data: data.footprint,
+                label: 'CO2 Production (tons)',
+                fill: true,
+                borderColor: "#3a4443",
+                backgroundColor: gradient,
+                pointBackgroundColor: "#3a4443",
+                pointBorderColor: "#3a4443",
+                pointHoverBackgroundColor: "#3a4443",
+                pointHoverBorderColor: "#3a4443",
+                borderWidth: "1",
+            }],
+            labels: data.years
+        }
+    });
+}
+
 // SELF SUFFIENCY DATA
 
 // 2: preparing the data
@@ -342,6 +383,46 @@ function appendMilkProduction(sustainabilityData) {
     });
 }
 
+// 2: preparing the data
+function prepareMilkData1(sustainabilityData) {
+    let mp1 = [];
+    let years = [];
+    sustainabilityData.forEach(data => {
+        if (data.region === 'south') { // in this case we only want the data from 'north'
+            mp1.push(data.herdMilkProduction);
+            years.push(data.year);
+        }
+    });
+    return {
+        mp1,
+        years
+    }
+}
+//3: appending the chart
+function appendMilkProduction1(sustainabilityData) {
+    let data = prepareMilkData1(sustainabilityData);
+    console.log(data);
+    // generate chart
+    let chartContainer1 = document.querySelector('#myChart3');
+    let chart = new Chart(chartContainer1, {
+        type: 'line',
+        data: {
+            datasets: [{
+                data: data.mp1,
+                label: "Milk Production (kgs)",
+                fill: true,
+                borderColor: "#d3e8f9",
+                backgroundColor: gradient2,
+                pointBackgroundColor: "#d3e8f9",
+                pointBorderColor: "#d3e8f9",
+                pointHoverBackgroundColor: "#d3e8f9",
+                pointHoverBorderColor: "#d3e8f9",
+                borderWidth: "1",
+            }],
+            labels: data.years,
+        }
+    });
+}
 // Leaderboar Dropdown
 
 function toggleDropdown() {
